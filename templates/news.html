@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="header">
+        <section class="news-section">
+            <div class="news-container">
+                {% for news_item in news %}
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename=news_item.photo) }}" alt="News Image">
+                    </div>
+                    <div class="news-content">
+                        <h2>{{ news_item.title }}</h2>
+                        <p>{{ news_item.content[:200] }}...</p>  <!-- Display the first 200 characters of the content -->
+                        <a href="{{ url_for('main_routes.news_detail', news_id=news_item.id) }}" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+{% endblock %}

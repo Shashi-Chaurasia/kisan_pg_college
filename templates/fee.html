@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <section class="header">
+
+    <form onsubmit="pay()">
+    <div class="wrapper">
+      <div class="r_form_wrap">
+
+        <div class="title">
+          <p id="header_fees">Online Pay Fees</p>
+        </div>
+
+        <!-- Admission from -->
+
+        <div class="r_form">
+          <form method="post" onsubmit="sendmail(); reset(); return false;">
+            <div class="input_wrap">
+
+
+              <label for="yourname">Course</label>
+              <div class="input_item">
+
+                  <i class="fa fa-bars" aria-hidden="true"id="icon" ></i>
+                <select id="course" name="cars" class="input" required>
+                <option value="select"> Select the Course</option>
+                <option value="bca" id="bcabatch"> BCA 2021-2022 Batch</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="yourname">Your UID/Enrollment no</label>
+                <div class="input_item">
+                <!-- min="1" max="2" -->
+                <i class="fa fa-list-ol" aria-hidden="true"id="icon" ></i>
+                <input type="number"  class="input" id="uid" placeholder="Enter the last two UID digit" >
+              </div>
+            </div>
+            <p id="uid_detail">Ex: FCAB2101101001 to enter the: 01</p>
+            <input type="button" class="button" value="Get" onclick="getInputValue()">
+
+            <br>
+            <br>
+            <div class="input_wrap">
+              <label for="yourname">Student name</label>
+              <div class="input_item">
+                <i class="fa fa-user" id="icon"></i>
+                <p id="demo" class="input" ></p>
+  </div>
+            </div>
+
+                <div class="input_wrap">
+                  <label for="yourname">Pending Fees Detail</label>
+                  <div class="input_item">
+                    <i class="fa fa-credit-card" id="icon"></i>
+                    <p id="demo1" class="input" ></p>
+                  </div>
+                </div>
+
+
+            <input type="button" class="button" value="Pay Fees" onclick="sendmail()">
+
+</form>
+
+
+
+
+    </section>
+
+<h1>Fees</h1>
+{% endblock %}

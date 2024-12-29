@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="The Gokul Global University at Sidhpur provide one of the earliest form of technical studies, which has been vital in setting up the standard of brilliance.">
+    <meta name="keywords" content="Gokul Global University, Collage">
+    <meta name="author" content="Jaydipsinh Solanki">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faculty.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/course.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notification.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="images/svg+xml">
+</head>
+<body>
+    <section>
+       <nav>
+            <a href="{{ url_for('main_routes.home') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" id="logo-img"></a>
+
+            <div class="nav-links" id="navLinks">
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="{{ url_for('main_routes.home') }}">Home</a></li>
+                    <li><a href="{{ url_for('main_routes.about_us') }}">About Us</a></li>
+                    <li><a href="{{ url_for('main_routes.academics_admission') }}">Admission</a></li>
+                    <li><a href="{{ url_for('main_routes.news') }}">News</a></li>
+{#                    <li><a href="{{ url_for('main_routes.courses') }}">Course</a></li>#}
+{#                    <li><a href="{{ url_for('main_routes.academics_fees') }}">Fees</a></li>#}
+                    <li><a href="{{ url_for('main_routes.notification') }}">Notice</a></li>
+                    <li><a href="{{ url_for('main_routes.contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <a href="{{ url_for('admin_routes.admin_login') }}" class="btn admin-btn">Admin Login</a>
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+       </nav>
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/main_script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/faculty.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
+</body>
+</html>

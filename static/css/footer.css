@@ -1,0 +1,88 @@
+/* Reset CSS */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Banner Section */
+.banner-section {
+  background: linear-gradient(to right, #0a3a75, #eaeced);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 1800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* College Header */
+.college-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.college-header .logo {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.college-header .college-name {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.college-header .kishan {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.college-header .pg-college {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffcc00;
+}
+
+/* Separator */
+.separator {
+  height: 3px;
+  background: #ffffff55;
+  margin: 10px auto;
+  width: 70%;
+}
+
+/* Content Rows */
+.content-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.content-row span {
+  color: #fff;
+}
+
+.content-row span:not(:nth-child(odd)) {
+  font-size: 18px;
+  font-weight: normal;
+  color: #ffffffaa;
+}
+
+.content-row span:hover {
+  color: #ff3d3d;
+  cursor: pointer;
+}

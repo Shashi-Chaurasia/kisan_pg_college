@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="header">
+        <div class="text-box">
+            <h1>Kishan Pg College</h1>
+            <p>The Kishan Pg College at Kushinagar provide one of the earliest form of technical studies, which has been vital in setting up the standard of brilliance.</p>
+            <a href="{{ url_for('main_routes.academics_admission') }}" class="hero-btn">Admission Open</a>
+        </div>
+    </section>
+    <!-- Notification Section -->
+    <section class="notification-section">
+        <div class="notification-wrapper">
+            <div class="notification-header">
+                <h3>Notifications</h3>
+                <span id="new-notification-indicator">New</span>
+            </div>
+            <ul id="notification-list">
+                {% for notification in notifications %}
+                    <li>
+                        <a href="{{ url_for("main_routes.notification")}}">
+                            {{ notification.message }}
+                            {% if notification.created_at %}
+                                {% set notification_date = notification.created_at.strftime('%Y-%m-%d') %}
+
+                                {% if notification_date == today_date or notification_date >= two_days_ago %}
+                                    <span class="new-tag">New</span>
+                                {% endif %}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <!-- Course Section -->
+    <section class="course" id="course_call">
+        <h1>Course We Offer</h1>
+        <p>We offer three best computer science courses for students at Kishan Pg College</p>
+        <div class="row" id="course-carousel">
+            {% for course in courses %}
+            <div class="course-col">
+                <h2>{{ course.title }}</h2>
+                <p>{{ course.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Campus Section -->
+    <section class="campus">
+        <h1> Our Campus</h1>
+        <div class="row">
+            {% for cam in campuses %}
+            <div class="campus-col">
+                <img src="{{ url_for('static', filename= cam.photo) }}" alt="{{ cam.title }}">
+                <div class="layer">
+                    <h3>{{ cam.title }}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities">
+        <h1> Our Facilities</h1>
+        <p>Facilities provided for students by Gokul Global University</p>
+
+        <div class="row">
+            {% for fac in facilities %}
+            <div class="facilities-col">
+                <img src="{{ url_for('static', filename=fac.photo) }}" alt="{{ fac.title }}">
+                <h3>{{ fac.title }}</h3>
+                <p>{{ fac.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="faculties">
+    <h1>Our Faculties</h1>
+    <p>Meet the dedicated faculty members shaping the future of our students.</p>
+
+    <div class="faculty-carousel-container">
+        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="faculty-carousel" id="faculty-carousel">
+            {% for faculty in faculties %}
+                <div class="faculties-col">
+                    <img src="{{ url_for('static', filename=faculty.photo) }}" alt="{{ faculty.name }}">
+                    <h3>{{ faculty.name }}</h3>
+                    <p>{{ faculty.designation }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+    <section class="banner-section">
+    <div class="banner-content">
+      <!-- Logo and College Name -->
+      <div class="college-header">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="College Logo" class="logo">
+        <div class="college-name">
+          <span class="kishan">Kishan</span>
+          <span class="pg-college">PG College</span>
+        </div>
+      </div>
+
+      <!-- Separator -->
+{#      <div class="separator"></div>#}
+
+      <!-- Content Rows -->
+      <div class="content-row">
+        <span>Home</span>
+          <span>|</span>
+        <span>About Us</span>
+          <span>|</span>
+        <span>Admission</span>
+
+      </div>
+      <div class="separator"></div>
+      <div class="content-row">
+        <span>Contact Us</span>
+          <span>|</span>
+        <span>Fees</span>
+          <span>|</span>
+        <span>New</span>
+          <span>|</span>
+          <span>Notice Board</span>
+          <span>|</span>
+          <span>Gallery</span>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

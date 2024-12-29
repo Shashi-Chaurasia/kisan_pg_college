@@ -1,0 +1,34 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<section class="custom-faculty-form">
+    <h2 class="form-heading">{{ "Edit Notification" if notification.id else "Add Notification" }}</h2>
+    <form method="POST" enctype="multipart/form-data" class="faculty-form">
+        <div class="form-row">
+            <label for="faculty-name" class="form-label">Message:</label>
+            <input type="text" id="faculty-name" name="message" class="form-input" value="{{ notification.title if notification else '' }}" required>
+        </div>
+        <div class="form-row">
+            <label for="faculty-photo" class="form-label">File:</label>
+            <input type="file" id="faculty-photo" name="file" class="form-input">
+        </div>
+
+        {% if notification.photo %}
+        <div class="form-row">
+            <p class="current-photo-label">Current File:</p>
+            {% if notification.photo.endswith('.pdf') %}
+            <!-- Provide a link to view the PDF -->
+                <a href="{{ url_for('static', filename=notification.photo) }}" target="_blank">View PDF</a>
+            {% else %}
+            <!-- Display the image if the file is an image -->
+                <img src="{{ url_for('static', filename=notification.photo) }}" alt="Current Photo" class="current-photo">
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="form-row">
+            <button type="submit" class="form-submit-btn">Save</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

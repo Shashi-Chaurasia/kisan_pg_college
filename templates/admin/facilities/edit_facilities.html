@@ -1,0 +1,34 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<section class="custom-faculty-form">
+    <h2 class="form-heading">{{ "Edit facilities" if facilities.id else "Add facilities" }}</h2>
+    <form method="POST" enctype="multipart/form-data" class="faculty-form">
+        <div class="form-row">
+            <label for="faculty-name" class="form-label">Title:</label>
+            <input type="text" id="faculty-name" name="title" class="form-input" value="{{ facilities.title if facilities else '' }}" required>
+        </div>
+
+        <div class="form-row">
+            <label for="faculty-bio" class="form-label">Description:</label>
+            <textarea id="faculty-bio" name="description" class="form-textarea">{{ facilities.description if facilities else '' }}</textarea>
+        </div>
+
+        <div class="form-row">
+            <label for="faculty-photo" class="form-label">Photo:</label>
+            <input type="file" id="faculty-photo" name="photo" class="form-input">
+        </div>
+
+        {% if facilities.photo %}
+        <div class="form-row">
+            <p class="current-photo-label">Current Photo:</p>
+            <img src="{{ url_for('static', filename=facilities.photo) }}" alt="Current Photo" class="current-photo">
+        </div>
+        {% endif %}
+
+        <div class="form-row">
+            <button type="submit" class="form-submit-btn">Save</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

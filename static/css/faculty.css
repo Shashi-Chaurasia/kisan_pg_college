@@ -1,0 +1,94 @@
+.faculties {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.faculties h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.faculties p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.faculty-carousel-container {
+    position: relative;
+    width: 80%; /* Keep some margin from left and right */
+    overflow: hidden; /* Ensure only one slide is visible */
+    padding: 0 20px; /* Space for navigation buttons */
+    margin: auto;
+}
+
+
+.faculty-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+    width: max-content; /* Dynamically adjust width */
+}
+
+.faculties-col {
+    flex: 0 0 33.33%; /* Each card takes one-third of the row */
+    max-width: 33.33%;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faculties-col img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.faculties-col h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.faculties-col p {
+    font-size: 1em;
+    color: #777;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.faculties-col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}

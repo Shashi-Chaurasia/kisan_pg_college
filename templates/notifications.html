@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Refactored Notification Section -->
+    <section class="header">
+
+
+    <section class="notif-section">
+        <div class="notif-container">
+            <div class="notif-header">
+                <h3>Notice Board</h3>
+            </div>
+            <div class="notif-content">
+                {% for notification in notifications %}
+                    <div class="notif-row">
+                        <p class="notif-message">
+                            <a href="{{ url_for('static', filename=notification.photo) }}" alt="{{ notification.message }}">
+                                {{ notification.message }}
+                                {% if notification.created_at %}
+                                    {% set notification_date = notification.created_at.strftime('%Y-%m-%d') %}
+                                    {% if notification_date == today_date or notification_date >= two_days_ago %}
+                                        <span class="notif-new-tag">New</span>
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}

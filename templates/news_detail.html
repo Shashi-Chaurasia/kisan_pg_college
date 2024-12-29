@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <section class="header">
+        <section class="news-detail-section">
+            <div class="news-detail-container">
+                <div class="news-detail-item">
+                    <div class="news-image">
+                        <img src="{{ url_for('static', filename=news_item.photo) }}" alt="News Image">
+                    </div>
+                    <div class="news-content">
+                        <h2>{{ news_item.title }}</h2>
+                        <p>{{ news_item.content }}</p>  <!-- Full content displayed here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+{% endblock %}

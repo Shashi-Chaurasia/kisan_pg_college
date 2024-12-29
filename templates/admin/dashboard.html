@@ -1,0 +1,37 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<section class="dashboard-widgets">
+    <div class="widget" onclick="window.location.href='{{ url_for('faculty_routes.manage_faculty') }}'">
+        <h3>Total Faculty</h3>
+        <p>{{ faculty_count }}</p>
+        <a href="{{ url_for('faculty_routes.manage_faculty') }}" class="widget-link">Manage Faculty</a>
+    </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('course_routes.manage_courses') }}'">
+        <h3>Total Courses</h3>
+        <p>{{ course_count }}</p>
+        <a href="{{ url_for('course_routes.manage_courses') }}" class="widget-link">Manage Courses</a>
+    </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('facilities_routes.manage_facilities') }}'">
+        <h3>Total Facilities</h3>
+        <p>{{ facilities_count }}</p>
+        <a href="{{ url_for('facilities_routes.manage_facilities') }}" class="widget-link">Manage Facilities</a>
+    </div>
+
+    <div class="widget" onclick="window.location.href='{{ url_for('campus_routes.manage_campus') }}'">
+        <h3>Total Campus</h3>
+        <p>{{ campus_count }}</p>
+        <a href="{{ url_for('campus_routes.manage_campus') }}" class="widget-link">Manage Campus</a>
+    </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('notification_routes.manage_notification') }}'">
+        <h3>Total Notification</h3>
+        <p>{{ notification_count }}</p>
+        <a href="{{ url_for('notification_routes.manage_notification') }}" class="widget-link">Manage Notification</a>
+    </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('news_routes.manage_news') }}'">
+        <h3>Total News</h3>
+        <p>{{ news_count }}</p>
+        <a href="{{ url_for('news_routes.manage_news') }}" class="widget-link">Manage News</a>
+    </div>
+</section>
+{% endblock %}
