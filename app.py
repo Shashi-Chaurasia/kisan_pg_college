@@ -32,6 +32,8 @@ def create_app():
 
     return app
 
+# Expose WSGI callable as "application"
+application = create_app()
+
 if __name__ == "__main__":
-    app = create_app()
-    app.run(port=5005,debug=True)
+    application.run(port=5005, debug=True)
