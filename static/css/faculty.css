@@ -17,21 +17,25 @@
 .faculty-carousel-container {
     position: relative;
     width: 80%; /* Keep some margin from left and right */
-    overflow: hidden; /* Ensure only one slide is visible */
+    overflow: hidden; /* Hide the overflow to keep things tidy */
     padding: 0 20px; /* Space for navigation buttons */
     margin: auto;
 }
 
-
 .faculty-carousel {
     display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between items */
     transition: transform 0.5s ease-in-out; /* Smooth sliding */
-    width: max-content; /* Dynamically adjust width */
+    width: max-content; /* Dynamically adjust the width to the content size */
+    overflow-x: auto; /* Enable horizontal scroll if needed */
+    scroll-snap-type: x mandatory; /* Ensure snap effect when scrolling */
 }
 
 .faculties-col {
-    flex: 0 0 33.33%; /* Each card takes one-third of the row */
-    max-width: 33.33%;
+    flex: 0 0 auto; /* Ensure columns don't grow/shrink */
+    width: 200px; /* Fixed width for each faculty item */
+    height: 300px; /* Fixed height for each faculty item */
     box-sizing: border-box;
     text-align: center;
     background: #fff;
@@ -41,12 +45,12 @@
     margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    scroll-snap-align: start; /* Align the items at the start of the scroll */
 }
 
 .faculties-col img {
     width: 100%;
-    max-width: 150px;
-    height: 150px;
+    height: 150px; /* Fixed height for the image */
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 10px;
@@ -88,6 +92,7 @@
 .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 .faculties-col:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
