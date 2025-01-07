@@ -18,9 +18,12 @@ function moveSlide(direction) {
         currentIndex = 0; // Wrap to the first slide
     }
 
-    // Calculate offset
-    const offset = -(currentIndex * 100); // Slide width is 100%
-    carousel.style.transform = `translateX(${offset}%)`;
+    // Calculate the width per slide (if you are not already using a fixed width)
+    const slideWidth = faculties[0].offsetWidth + 20; // 20px accounts for the gap between items
+    const offset = -(currentIndex * slideWidth); // Slide width is dynamic based on content
+
+    // Apply the offset to the carousel
+    carousel.style.transform = `translateX(${offset}px)`;
 
     // Debugging logs
     console.log("Current Index:", currentIndex);
@@ -39,5 +42,6 @@ function stopAutoSlide() {
 // Start the automatic slide when the page loads
 document.addEventListener("DOMContentLoaded", startAutoSlide);
 
+// Pause auto-slide on hover, resume on mouseout
 document.getElementById("faculty-carousel").addEventListener("mouseover", stopAutoSlide);
 document.getElementById("faculty-carousel").addEventListener("mouseout", startAutoSlide);
