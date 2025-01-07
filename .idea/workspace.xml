@@ -5,70 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96faefe9-10ba-4592-b503-cc98f28e0718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kishan_pg_college.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/admin_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/campus_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/count_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/course_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/facilities_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/faculty_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/news_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/admin/notification_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/main_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seed.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/about-us.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/admin/admin-login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/admin/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/admin/faculty-form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/contact-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/course.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/faculty.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/main_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/news.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/news_detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/notification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/faculty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/fees.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/main_script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/notification.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/add_faculty.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/admin_login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/campus/edit_campus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/campus/manage_campus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/course/edit_course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/course/manage_course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/facilities/edit_facilities.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/facilities/manage_facilities.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/faculty/edit_faculty.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/faculty/manage_faculty.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/manage_news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/news/edit_news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/news/manage_news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/notification/edit_notification.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/notification/manage_notification.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admission.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/course.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/fee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/news_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notifications.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/passenger_wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/main_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admission.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admission.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/notifications.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +60,7 @@
     "Flask server.kishan_pg_college.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/workdir",
     "last_opened_file_path": "/Users/home/Desktop/kishan_pg_college/static/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

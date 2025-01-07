@@ -20,7 +20,7 @@ def home():
     facilities_list = Facilities.query.all()
     campus_list = Campus.query.all()
     notifications = Notification.query.all()
-    return render_template("home.html", title="Kishan PG College", faculties=faculty_list,courses=courses_list,facilities= facilities_list, notifications=notifications
+    return render_template("home.html", title="Kisan PG College", faculties=faculty_list,courses=courses_list,facilities= facilities_list, notifications=notifications
                            ,campuses=campus_list, utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago)
 
 @main_routes_bp.route("/news")

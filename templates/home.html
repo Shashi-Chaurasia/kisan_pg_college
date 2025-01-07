@@ -2,16 +2,17 @@
 {% block content %}
     <section class="header">
         <div class="text-box">
-            <h1>Kishan Pg College</h1>
-            <p>The Kishan Pg College at Kushinagar provide one of the earliest form of technical studies, which has been vital in setting up the standard of brilliance.</p>
-            <a href="{{ url_for('main_routes.academics_admission') }}" class="hero-btn">Admission Open</a>
+            <h1>किसान पीजी कॉलेज</h1>
+            <p> किसान पीजी कॉलेज
+सेवरही, कुशीनगर में स्थित किसान पीजी कॉलेज तकनीकी शिक्षा के प्रारंभिक रूपों में से एक प्रदान करता है, जो उत्कृष्टता के मानकों को स्थापित करने में महत्वपूर्ण रहा है।</p>
+            <a href="{{ url_for('main_routes.academics_admission') }}" class="hero-btn">प्रवेश खुला </a>
         </div>
     </section>
     <!-- Notification Section -->
     <section class="notification-section">
         <div class="notification-wrapper">
             <div class="notification-header">
-                <h3>Notifications</h3>
+                <h3>सूचनाएँ</h3>
                 <span id="new-notification-indicator">New</span>
             </div>
             <ul id="notification-list">
@@ -34,8 +35,8 @@
     </section>
     <!-- Course Section -->
     <section class="course" id="course_call">
-        <h1>Course We Offer</h1>
-        <p>We offer three best computer science courses for students at Kishan Pg College</p>
+        <h1>पाठ्यक्रम जो हम प्रदान करते हैं</h1>
+        <p>किसान पीजी कॉलेज में छात्रों के लिए हम तीन बेहतरीन कंप्यूटर साइंस पाठ्यक्रम प्रदान करते हैं।</p>
         <div class="row" id="course-carousel">
             {% for course in courses %}
             <div class="course-col">
@@ -48,7 +49,7 @@
 
     <!-- Campus Section -->
     <section class="campus">
-        <h1> Our Campus</h1>
+        <h1> हमारा परिसर</h1>
         <div class="row">
             {% for cam in campuses %}
             <div class="campus-col">
@@ -63,8 +64,8 @@
 
     <!-- Facilities Section -->
     <section class="facilities">
-        <h1> Our Facilities</h1>
-        <p>Facilities provided for students by Kisan Pg College</p>
+        <h1> हमारी सुविधाएं</h1>
+        <p>किसान पीजी कॉलेज द्वारा छात्रों के लिए प्रदान की गई सुविधाएं</p>
 
         <div class="row">
             {% for fac in facilities %}
@@ -78,8 +79,8 @@
     </section>
 
     <section class="faculties">
-    <h1>Our Faculties</h1>
-    <p>Meet the dedicated faculty members shaping the future of our students.</p>
+    <h1>हमारे संकाय सदस्य</h1>
+    <p>हमारे छात्रों के भविष्य को आकार देने वाले समर्पित संकाय सदस्य से मिलें।</p>
 
     <div class="faculty-carousel-container">
         <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
@@ -101,8 +102,8 @@
       <div class="college-header">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="College Logo" class="logo">
         <div class="college-name">
-          <span class="kishan">Kishan</span>
-          <span class="pg-college">PG College</span>
+          <span class="kishan">किशन</span>
+          <span class="pg-college"> पीजी कॉलेज</span>
         </div>
       </div>
 
@@ -111,24 +112,24 @@
 
       <!-- Content Rows -->
       <div class="content-row">
-        <span>Home</span>
+        <span>घर</span>
           <span>|</span>
-        <span>About Us</span>
+        <span>हमारे बारे में</span>
           <span>|</span>
-        <span>Admission</span>
+        <span>प्रवेश</span>
 
       </div>
       <div class="separator"></div>
       <div class="content-row">
-        <span>Contact Us</span>
+        <span>संपर्क करें </span>
           <span>|</span>
-        <span>Fees</span>
+        <span>फीस</span>
           <span>|</span>
-        <span>New</span>
+        <span>न्यूज़</span>
           <span>|</span>
-          <span>Notice Board</span>
+          <span>सूचना बोर्ड</span>
           <span>|</span>
-          <span>Gallery</span>
+          <span>गैलरी</span>
       </div>
     </div>
   </section>
