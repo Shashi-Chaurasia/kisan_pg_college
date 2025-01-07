@@ -23,8 +23,8 @@
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,hi', // Translate between English and Hindi
+                pageLanguage: 'hi', // Default language is Hindi
+                includedLanguages: 'hi,en', // Allow switching between Hindi and English
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -63,17 +63,17 @@
             <div class="nav-links" id="navLinks">
                 <span class="icon" onclick="hidemenu()">&#10005;</span>
                 <ul>
-                    <li><a href="{{ url_for('main_routes.home') }}">Home</a></li>
-                    <li><a href="{{ url_for('main_routes.about_us') }}">About Us</a></li>
-                    <li><a href="{{ url_for('main_routes.academics_admission') }}">Admission</a></li>
-                    <li><a href="{{ url_for('main_routes.news') }}">News</a></li>
+                    <li><a href="{{ url_for('main_routes.home') }}">मुख्य पृष्ठ</a></li>
+                    <li><a href="{{ url_for('main_routes.about_us') }}">हमारे बारे में</a></li>
+                    <li><a href="{{ url_for('main_routes.academics_admission') }}">प्रवेश</a></li>
+                    <li><a href="{{ url_for('main_routes.news') }}">समाचार</a></li>
 {#                    <li><a href="{{ url_for('main_routes.courses') }}">Course</a></li>#}
 {#                    <li><a href="{{ url_for('main_routes.academics_fees') }}">Fees</a></li>#}
-                    <li><a href="{{ url_for('main_routes.notification') }}">Notice</a></li>
-                    <li><a href="{{ url_for('main_routes.contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('main_routes.notification') }}">सूचना</a></li>
+                    <li><a href="{{ url_for('main_routes.contact') }}">संपर्क करें</a></li>
                 </ul>
             </div>
-            <a href="{{ url_for('admin_routes.admin_login') }}" class="btn admin-btn">Admin Login</a>
+            <a href="{{ url_for('admin_routes.admin_login') }}" class="btn admin-btn">प्रशासक लॉगिन</a>
             <span class="icon" onclick="showmenu()">&#9776;</span>
        </nav>
     </section>
