@@ -89,7 +89,7 @@
         <div class="faculty-carousel" id="faculty-carousel">
             {% for faculty in faculties %}
                 <div class="faculties-col">
-                    <img src="{{ url_for('static', filename=faculty.photo) }}" alt="{{ faculty.name }}">
+                   <img src="{{ url_for('static', filename=faculty.photo if faculty.photo else 'default_photo.jpeg') }}" alt="{{ faculty.name }}">
                     <h3>{{ faculty.name }}</h3>
                     <p>{{ faculty.designation }}</p>
                 </div>
