@@ -114,22 +114,22 @@
 
       <!-- Content Rows -->
       <div class="content-row">
-        <span>घर</span>
+        <span><a href="{{ url_for('main_routes.home') }}">मुख्य पृष्ठ</a></span>
           <span>|</span>
-        <span>हमारे बारे में</span>
+        <span><a href="{{ url_for('main_routes.about_us') }}">हमारे बारे में</a></span>
           <span>|</span>
-        <span>प्रवेश</span>
+        <span><a href="{{ url_for('main_routes.academics_admission') }}">प्रवेश</a></span>
 
       </div>
       <div class="separator"></div>
       <div class="content-row">
-        <span>संपर्क करें </span>
+        <span><a href="{{ url_for('main_routes.contact') }}">संपर्क करें</a> </span>
           <span>|</span>
         <span>फीस</span>
           <span>|</span>
-        <span>न्यूज़</span>
+        <span><a href="{{ url_for('main_routes.news') }}">समाचार</a></span>
           <span>|</span>
-          <span>सूचना बोर्ड</span>
+          <span><a href="{{ url_for('main_routes.notification') }}">सूचना बोर्ड</a></span>
           <span>|</span>
           <span>गैलरी</span>
       </div>

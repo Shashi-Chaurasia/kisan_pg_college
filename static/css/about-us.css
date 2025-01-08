@@ -67,3 +67,18 @@
 .learn-more-btn:hover {
     background-color: #0056b3;
 }
+
+/* Style for truncating text */
+.truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 10; /* Number of visible lines */
+    -webkit-box-orient: vertical;
+    height: auto;
+    transition: max-height 0.3s ease;
+}
+
+.expand {
+    -webkit-line-clamp: unset; /* Remove line limit */
+    height: auto; /* Allow full height */
+}

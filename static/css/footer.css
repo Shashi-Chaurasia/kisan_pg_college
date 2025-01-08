@@ -72,7 +72,7 @@ body, html {
   margin: 5px 0;
 }
 
-.content-row span {
+.content-row span a {
   color: #fff;
 }
 
@@ -82,7 +82,7 @@ body, html {
   color: #ffffffaa;
 }
 
-.content-row span:hover {
+.content-row span a:hover {
   color: #ff3d3d;
   cursor: pointer;
 }
