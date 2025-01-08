@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kisanpgcollege-sewarhi.in//sitemap.xml
