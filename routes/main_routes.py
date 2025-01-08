@@ -66,3 +66,7 @@ def notification():
 @main_routes_bp.route('/sitemap.xml')
 def sitemap():
     return send_from_directory(directory='.', path='sitemap.xml', mimetype='application/xml')
+
+@main_routes_bp.route('/robots.txt')
+def robots():
+    return send_from_directory(directory='static', path='robots.txt', mimetype='text/plain')
