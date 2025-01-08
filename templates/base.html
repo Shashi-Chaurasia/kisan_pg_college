@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="description" content="The Kisan pg college provide one of the earliest form of pg studies, which has been vital in setting up the standard of brilliance.">
-    <meta name="keywords" content="Kisan Pg College, Sewarhi, Kushinagar">
+    <meta name="description" content="The Kisan PG College provides one of the earliest forms of PG studies, setting the standard for brilliance in Kushinagar.">
+    <meta name="keywords" content="Kisan PG College, PG Studies, Sewarhi, Kushinagar, Education">
     <meta name="author" content="Shashi Chaurasia">
-    <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/faculty.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/course.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/notification.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact-style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="images/svg+xml">
-    <!-- Google Translate script -->
+    <!-- Title -->
+    <title>Kisan PG College - Excellence in PG Studies</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/svg+xml">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Kisan PG College - Excellence in PG Studies">
+    <meta property="og:description" content="Kisan PG College offers one of the earliest forms of PG studies, setting the standard for excellence in Kushinagar.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/logo.png') }}">
+    <meta property="og:url" content="https://kisanpgcollege-sewarhi.in">
+    <meta property="og:type" content="website">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kisanpgcollege-sewarhi.in">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Kisan PG College",
+      "url": "https://kisanpgcollege-sewarhi.in",
+      "logo": "{{ url_for('static', filename='images/logo.png') }}",
+      "description": "Kisan PG College provides one of the earliest forms of PG studies, setting the standard for brilliance in Kushinagar.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sewarhi, Kushinagar",
+        "addressLocality": "Kushinagar",
+        "addressRegion": "UP",
+        "postalCode": "123456",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -29,23 +55,21 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Styling for the translate dropdown -->
+    <!-- Google Translate Styling -->
     <style>
         #google_translate_element {
             position: fixed;
             left: 10px;
-            top: 0; /* Keep it at the top-left corner */
+            top: 0;
             z-index: 1000;
             background-color: white;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 12px; /* Reduced font size */
+            font-size: 12px;
         }
-
         .goog-te-banner-frame {
             display: none !important;
         }
@@ -53,9 +77,23 @@
             top: 0 !important;
         }
     </style>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faculty.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/course.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/notification.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact-style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-us.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}">
 </head>
 <body>
-<div id="google_translate_element"></div>
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+    <!-- Header Section -->
     <section>
        <nav>
             <a href="{{ url_for('main_routes.home') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" id="logo-img"></a>
@@ -67,8 +105,6 @@
                     <li><a href="{{ url_for('main_routes.about_us') }}">हमारे बारे में</a></li>
                     <li><a href="{{ url_for('main_routes.academics_admission') }}">प्रवेश</a></li>
                     <li><a href="{{ url_for('main_routes.news') }}">समाचार</a></li>
-{#                    <li><a href="{{ url_for('main_routes.courses') }}">Course</a></li>#}
-{#                    <li><a href="{{ url_for('main_routes.academics_fees') }}">Fees</a></li>#}
                     <li><a href="{{ url_for('main_routes.notification') }}">सूचना</a></li>
                     <li><a href="{{ url_for('main_routes.contact') }}">संपर्क करें</a></li>
                 </ul>
@@ -78,9 +114,11 @@
        </nav>
     </section>
 
+    <!-- Content Block -->
     {% block content %}
     {% endblock %}
 
+    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/main_script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/faculty.js') }}"></script>
     <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
