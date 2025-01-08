@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import pytz
 
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, send_from_directory
 from models import Faculty, Courses, Facilities, Campus, News, Notification
 
 main_routes_bp = Blueprint('main_routes', __name__)
@@ -62,3 +62,7 @@ def notification():
     notifications = Notification.query.all()
     return render_template("notifications.html", title="Notifications", notifications=notifications,
                            utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago)
+
+@main_routes_bp.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(directory='.', path='sitemap.xml', mimetype='application/xml')
