@@ -2,9 +2,11 @@
 {% block content %}
     <section class="header">
         <div class="text-box">
-            <h1>किसान पीजी कॉलेज</h1>
-            <p> किसान पीजी कॉलेज
-सेवरही, कुशीनगर में स्थित किसान पीजी कॉलेज तकनीकी शिक्षा के प्रारंभिक रूपों में से एक प्रदान करता है, जो उत्कृष्टता के मानकों को स्थापित करने में महत्वपूर्ण रहा है।</p>
+            <h1 style="color: #9f4844; font-family: 'Georgia', serif; text-align: center; padding-bottom: 10px;">
+    किसान पी.जी कॉलेज
+</h1>
+{#            <p> किसान पी.जी. कॉलेज#}
+{#सेवरही, कुशीनगर में स्थित किसान पी.जी. कॉलेज तकनीकी शिक्षा के प्रारंभिक रूपों में से एक प्रदान करता है, जो उत्कृष्टता के मानकों को स्थापित करने में महत्वपूर्ण रहा है।</p>#}
             <a href="{{ url_for('main_routes.academics_admission') }}" class="hero-btn">प्रवेश खुला </a>
         </div>
     </section>
@@ -35,8 +37,10 @@
     </section>
     <!-- Course Section -->
     <section class="course" id="course_call">
-        <h1>पाठ्यक्रम जो हम प्रदान करते हैं</h1>
-        <p>किसान पीजी कॉलेज में छात्रों के लिए हम तीन बेहतरीन कंप्यूटर साइंस पाठ्यक्रम प्रदान करते हैं।</p>
+        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;">
+    पाठ्यक्रम जो हम प्रदान करते हैं
+</h1>
+{#        <p>किसान पीजी कॉलेज में छात्रों के लिए हम तीन बेहतरीन कंप्यूटर साइंस पाठ्यक्रम प्रदान करते हैं।</p>#}
         <div class="row" id="course-carousel">
             {% for course in courses %}
             <div class="course-col">
@@ -49,7 +53,7 @@
 
     <!-- Campus Section -->
     <section class="campus">
-        <h1> हमारा परिसर</h1>
+        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> हमारा परिसर</h1>
         <div class="row">
             {% for cam in campuses %}
             <div class="campus-col">
@@ -66,8 +70,8 @@
 
 
     <section class="facilities">
-        <h1> हमारी सुविधाएं</h1>
-        <p>किसान पीजी कॉलेज द्वारा छात्रों के लिए प्रदान की गई सुविधाएं</p>
+        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> हमारी सुविधाएं</h1>
+        <p>किसान पी.जी. कॉलेज द्वारा छात्रों के लिए प्रदान की गई सुविधाएं</p>
 
         <div class="row">
             {% for fac in facilities %}
@@ -81,7 +85,7 @@
     </section>
 
     <section class="faculties">
-    <h1>हमारे संकाय सदस्य</h1>
+    <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;">हमारे संकाय सदस्य</h1>
     <p>हमारे छात्रों के भविष्य को आकार देने वाले समर्पित संकाय सदस्य से मिलें।</p>
 
     <div class="faculty-carousel-container">
@@ -104,8 +108,8 @@
       <div class="college-header">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="College Logo" class="logo">
         <div class="college-name">
-          <span class="kishan">किसान</span>
-          <span class="pg-college"> पीजी कॉलेज</span>
+          <span class="kishan" style="font-family: 'Georgia', serif; font-weight: bold;">किसान</span>
+          <span class="pg-college" style="font-family: 'Georgia', serif; font-weight: bold;"> पी.जी. कॉलेज</span>
         </div>
       </div>
 

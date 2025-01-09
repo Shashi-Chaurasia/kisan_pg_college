@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 import pytz
 
 from flask import render_template, Blueprint, send_from_directory
-from models import Faculty, Courses, Facilities, Campus, News, Notification
+from models import Faculty, Courses, Facilities, Campus, News, Notification, Galleries
 
 main_routes_bp = Blueprint('main_routes', __name__)
 
@@ -70,3 +70,8 @@ def sitemap():
 @main_routes_bp.route('/robots.txt')
 def robots():
     return send_from_directory(directory='static', path='robots.txt', mimetype='text/plain')
+
+@main_routes_bp.route('/gallery')
+def gallery():
+    gallery_items = Galleries.query.all()
+    return render_template('gallery.html', title="gallery", gallery=gallery_items)

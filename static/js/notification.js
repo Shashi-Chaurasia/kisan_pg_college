@@ -25,6 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Test: Add a new notification after 5 seconds
     setTimeout(() => {
-        addNewNotification("Urgent: System maintenance scheduled tonight!", 999);
+        // addNewNotification("Urgent: System maintenance scheduled tonight!", 999);
     }, 5000);
 });

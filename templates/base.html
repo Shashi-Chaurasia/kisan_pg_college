@@ -88,6 +88,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
 </head>
 <body>
     <!-- Google Translate Widget -->
@@ -107,6 +108,8 @@
                     <li><a href="{{ url_for('main_routes.news') }}">समाचार</a></li>
                     <li><a href="{{ url_for('main_routes.notification') }}">सूचना</a></li>
                     <li><a href="{{ url_for('main_routes.contact') }}">संपर्क करें</a></li>
+                    <li><a href="{{ url_for('main_routes.contact') }}">समिति</a></li>
+                    <li><a href="{{ url_for('main_routes.gallery') }}">गेलरीं</a></li>
                 </ul>
             </div>
             <a href="{{ url_for('admin_routes.admin_login') }}" class="btn admin-btn">प्रशासक लॉगिन</a>

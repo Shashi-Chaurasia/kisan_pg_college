@@ -33,5 +33,10 @@
         <p>{{ news_count }}</p>
         <a href="{{ url_for('news_routes.manage_news') }}" class="widget-link">Manage News</a>
     </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('gallery_routes.manage_gallery') }}'">
+        <h3>Total Galleries</h3>
+        <p>{{ galleries_count }}</p>
+        <a href="{{ url_for('gallery_routes.manage_gallery') }}" class="widget-link">Manage Gallery</a>
+    </div>
 </section>
 {% endblock %}

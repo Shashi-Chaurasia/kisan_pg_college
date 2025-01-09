@@ -46,4 +46,9 @@ class Campus(db.Model):
     title = db.Column(db.String(255), nullable=False)
     photo = db.Column(db.String(200), nullable=True)
 
+class Galleries(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.String(255), nullable=False)
+    photo = db.Column(db.String(200), nullable=False)
 
