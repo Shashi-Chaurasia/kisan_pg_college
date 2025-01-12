@@ -71,19 +71,19 @@ body{
 
 @keyframes slideBackground {
     0% {
-        background-image: url('../images/back1.jpeg');
+        background-image: url('../images/backg1.jpeg');
     }
     25% {
-        background-image: url('../images/back2.jpeg');
+        background-image: url('../images/backg2.jpeg');
     }
     50% {
-        background-image: url('../images/back3.jpeg');
+        background-image: url('../images/backg3.jpeg');
     }
     75% {
-        background-image: url('../images/back4.jpeg');
+        background-image: url('../images/backg4.jpeg');
     }
     100% {
-        background-image: url('../images/back5.jpeg');
+        background-image: url('../images/backg5.jpeg');
     }
 }
 nav {
