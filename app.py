@@ -2,10 +2,9 @@ from flask import Flask
 from models import db
 from routes import main_routes
 from routes.admin import admin_routes, faculty_routes, course_routes, facilities_routes, count_routes, campus_routes, \
-    notification_routes, news_routes, gallery_routes
+    notification_routes, news_routes, gallery_routes, alumni_routes, committees_routes
 from flask_migrate import Migrate
 
-from routes.admin.gallery_routes import gallery_routes_bp
 
 
 def create_app():
@@ -29,6 +28,8 @@ def create_app():
     notification_routes.register_routes(app)
     news_routes.register_routes(app)
     gallery_routes.register_routes(app)
+    alumni_routes.register_routes(app)
+    committees_routes.register_routes(app)
 
     # Initialize the database if running for the first time
     with app.app_context():

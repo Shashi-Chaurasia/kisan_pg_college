@@ -1,0 +1,32 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ 'Edit Member' if member else 'Add New Member' }}</h1>
+<form action="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee_id, id=member.id if member else None) }}" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="name">Member Name:</label>
+        <input type="text" id="name" name="name" value="{{ member.name if member else '' }}" required>
+    </div>
+    <div>
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" value="{{ member.designation if member else '' }}" required>
+    </div>
+    <div>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio">{{ member.bio if member else '' }}</textarea>
+    </div>
+    <div>
+        <label for="photo">Photo:</label>
+        {% if member and member.photo %}
+        <div>
+            <img src="{{ url_for('static', filename=member.photo) }}" alt="Member Photo" style="max-height: 100px;">
+            <p>Current Photo</p>
+        </div>
+        {% endif %}
+        <input type="file" id="photo" name="photo">
+    </div>
+    <div>
+        <button type="submit">{{ 'Update' if member else 'Add' }}</button>
+        <a href="{{ url_for('committee_routes.manage_members', committee_id=committee_id) }}">Cancel</a>
+    </div>
+</form>
+{% endblock %}

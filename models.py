@@ -52,3 +52,35 @@ class Galleries(db.Model):
     description = db.Column(db.String(255), nullable=False)
     photo = db.Column(db.String(200), nullable=False)
 
+class Alumni(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    designation = db.Column(db.String(255), nullable=False)
+    bio = db.Column(db.Text, nullable=True)
+    year = db.Column(db.String(255), nullable=False)
+    photo = db.Column(db.String(200), nullable=True)
+
+class Committee(db.Model):
+    __tablename__ = 'committees'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(255), nullable=False)
+    type = db.Column(db.String(255), nullable=False)
+    members = db.relationship('Member', backref='committee', cascade='all, delete-orphan', lazy=True)
+
+    def __repr__(self):
+        return f"<Committee(id={self.id}, name={self.name}, type={self.type})>"
+
+
+class Member(db.Model):
+    __tablename__ = 'members'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    committee_id = db.Column(db.Integer, db.ForeignKey('committees.id'), nullable=False)
+    name = db.Column(db.String(255), nullable=False)
+    designation = db.Column(db.String(255), nullable=False)
+    bio = db.Column(db.Text, nullable=True)
+    photo = db.Column(db.String(255), nullable=True)
+
+    def __repr__(self):
+        return f"<Member(id={self.id}, name={self.name}, designation={self.designation})>"

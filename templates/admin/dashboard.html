@@ -38,5 +38,15 @@
         <p>{{ galleries_count }}</p>
         <a href="{{ url_for('gallery_routes.manage_gallery') }}" class="widget-link">Manage Gallery</a>
     </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('alumni_routes.manage_alumni') }}'">
+        <h3>Total Alumni</h3>
+        <p>{{ alumni_count }}</p>
+        <a href="{{ url_for('alumni_routes.manage_alumni') }}" class="widget-link">Manage Alumni</a>
+    </div>
+    <div class="widget" onclick="window.location.href='{{ url_for('committee_routes.manage_committees') }}'">
+        <h3>Total Committees</h3>
+        <p>{{ committee_count }}</p>
+        <a href="{{ url_for('committee_routes.manage_committees') }}" class="widget-link">Manage Committees</a>
+    </div>
 </section>
 {% endblock %}

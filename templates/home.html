@@ -2,14 +2,30 @@
 {% block content %}
     <section class="header">
         <div class="text-box">
-            <h1 style="color: #9f4844; font-family: 'Georgia', serif; text-align: center; padding-bottom: 10px;">
-    किसान पी.जी कॉलेज
-</h1>
-{#            <p> किसान पी.जी. कॉलेज#}
-{#सेवरही, कुशीनगर में स्थित किसान पी.जी. कॉलेज तकनीकी शिक्षा के प्रारंभिक रूपों में से एक प्रदान करता है, जो उत्कृष्टता के मानकों को स्थापित करने में महत्वपूर्ण रहा है।</p>#}
+            <h1 style="color: #eaeced; font-family: 'Georgia', serif; text-align: center; padding-bottom: 10px;">
+    किसान पी.जी. कॉलेज, तमकुही रोड, सेवरही, कुशीनगर
+</h1><p style="color: #eaeced; font-family: 'Georgia', serif; text-align: center; padding-bottom: 10px; font-size: 40px;">
+    सम्बद्ध दीनदयाल उपाध्याय गोरखपुर विश्वविद्यालय, गोरखपुर
+</p>
+            <p style="color: #eaeced; font-family: 'Georgia', serif; text-align: center; padding-bottom: 10px; font-size: 30px;">(न मानुषात् श्रेष्ठतरं हि किंञ्चित्)</p>
             <a href="{{ url_for('main_routes.academics_admission') }}" class="hero-btn">प्रवेश खुला </a>
         </div>
     </section>
+    <!-- Principal Section -->
+    <section class="principal-section">
+    <div class="principal-profile">
+        <div class="principal-photo">
+            <img src="{{ url_for('static', filename=principal.photo if principal.photo else 'default_principal.jpg') }}"
+                 alt="Principal Photo">
+        </div>
+        <div class="principal-info">
+            <h2>{{ principal.name }}</h2>
+            <h3>{{ principal.designation }}</h3>
+            <p>{{ principal.bio }}</p>
+        </div>
+    </div>
+</section>
+
     <!-- Notification Section -->
     <section class="notification-section">
         <div class="notification-wrapper">
@@ -38,7 +54,7 @@
     <!-- Course Section -->
     <section class="course" id="course_call">
         <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;">
-    पाठ्यक्रम जो हम प्रदान करते हैं
+    पाठ्यक्रम
 </h1>
 {#        <p>किसान पीजी कॉलेज में छात्रों के लिए हम तीन बेहतरीन कंप्यूटर साइंस पाठ्यक्रम प्रदान करते हैं।</p>#}
         <div class="row" id="course-carousel">
@@ -53,7 +69,7 @@
 
     <!-- Campus Section -->
     <section class="campus">
-        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> हमारा परिसर</h1>
+        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> महाविद्यालय परिसर </h1>
         <div class="row">
             {% for cam in campuses %}
             <div class="campus-col">
@@ -70,8 +86,8 @@
 
 
     <section class="facilities">
-        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> हमारी सुविधाएं</h1>
-        <p>किसान पी.जी. कॉलेज द्वारा छात्रों के लिए प्रदान की गई सुविधाएं</p>
+        <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> महाविद्यालय की सुविधाएं </h1>
+{#        <p>किसान पी.जी. कॉलेज द्वारा छात्रों के लिए प्रदान की गई सुविधाएं</p>#}
 
         <div class="row">
             {% for fac in facilities %}
@@ -85,7 +101,7 @@
     </section>
 
     <section class="faculties">
-    <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;">हमारे संकाय सदस्य</h1>
+    <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> महाविद्यालय के सम्मानित संकाय सदस्य </h1>
     <p>हमारे छात्रों के भविष्य को आकार देने वाले समर्पित संकाय सदस्य से मिलें।</p>
 
     <div class="faculty-carousel-container">
@@ -100,6 +116,24 @@
             {% endfor %}
         </div>
         <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+   <section class="alumni-section">
+    <h1 style="font-family: 'Georgia', serif; font-weight: bold; text-align: center; padding-bottom: 10px;"> महाविद्यालय के सम्मानित पूर्व छात्र</h1>
+
+    <div class="alumni-carousel-container">
+        <button class="alumni-prev-btn" onclick="moveAlumniSlide(-1)">&#10094;</button>
+        <div class="alumni-carousel" id="alumni-carousel">
+            {% for alumni in alumni_list %}
+                <div class="alumni-col">
+                   <img src="{{ url_for('static', filename=alumni.photo if alumni.photo else 'default_photo.jpeg') }}" alt="{{ alumni.name }}">
+                    <h3>{{ alumni.name }}</h3>
+                    <p>{{ alumni.designation }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="alumni-next-btn" onclick="moveAlumniSlide(1)">&#10095;</button>
     </div>
 </section>
     <section class="banner-section">
@@ -135,7 +169,7 @@
           <span>|</span>
           <span><a href="{{ url_for('main_routes.notification') }}">सूचना बोर्ड</a></span>
           <span>|</span>
-          <span>गैलरी</span>
+          <span><a href="{{ url_for('main_routes.gallery') }}">गैलरी</a></span>
       </div>
     </div>
   </section>

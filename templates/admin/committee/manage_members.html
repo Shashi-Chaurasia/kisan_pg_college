@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>Manage Members of {{ committee.name }}</h1>
+<a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id) }}">Add New Member</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.name }}</td>
+            <td>{{ member.designation }}</td>
+            <td>
+                <a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id, id=member.id) }}">Edit</a> |
+                <form action="{{ url_for('committee_routes.delete_member', committee_id=committee.id, id=member.id) }}" method="post" style="display: inline;">
+                    <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

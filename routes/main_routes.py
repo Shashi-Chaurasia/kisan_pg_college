@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta
 import pytz
 
-from flask import render_template, Blueprint, send_from_directory
-from models import Faculty, Courses, Facilities, Campus, News, Notification, Galleries
+from flask import render_template, Blueprint, send_from_directory, jsonify, abort
+from models import Faculty, Courses, Facilities, Campus, News, Notification, Galleries, Alumni, Committee
 
 main_routes_bp = Blueprint('main_routes', __name__)
 
@@ -20,8 +20,16 @@ def home():
     facilities_list = Facilities.query.all()
     campus_list = Campus.query.all()
     notifications = Notification.query.all()
+    alumni_list = Alumni.query.all()
+    principal = {
+        "photo": "images/Principal.jpeg",
+        "name": "प्रो. अनिल कुमार",
+        "designation": "प्राचार्य",
+        "bio": " संदेश - शैक्षणिक गुणवत्ता में अभिवृद्धि करना एवं देश व समाज के लिए कुशल और योग्य नागरिक तैयार करना |"
+    }
     return render_template("home.html", title="Kisan PG College", faculties=faculty_list,courses=courses_list,facilities= facilities_list, notifications=notifications
-                           ,campuses=campus_list, utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago)
+                           ,campuses=campus_list, utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago,
+                           alumni_list = alumni_list,principal=principal)
 
 @main_routes_bp.route("/news")
 def news():
@@ -75,3 +83,40 @@ def robots():
 def gallery():
     gallery_items = Galleries.query.all()
     return render_template('gallery.html', title="gallery", gallery=gallery_items)
+
+@main_routes_bp.route('/committees')
+def committees():
+    committee_items = Committee.query.filter_by(type='college').all()
+    management_items = Committee.query.filter_by(type='management').all()
+    print(committee_items)
+    return render_template('committees.html', title="Committees", college_committees=committee_items
+                           , management_committees=management_items)
+
+# Web route for getting a specific committee's details (for rendering in HTML)
+@main_routes_bp.route('/api/committees/<int:committee_id>')
+def get_committee(committee_id):
+    # Fetch the committee by ID
+    committee = Committee.query.get(committee_id)
+
+    if not committee:
+        abort(404, description="Committee not found")  # Returns a 404 if committee is not found
+
+    # Serialize the committee data
+    committee_data = {
+        'id': committee.id,
+        'name': committee.type,
+        # 'description': committee.description,
+        'members': []
+    }
+
+    # Add member data
+    for member in committee.members:
+        committee_data['members'].append({
+            'id': member.id,
+            'name': member.name,
+            'designation': member.designation,
+            'bio': member.bio,
+            'photo': f'static/{member.photo}'
+        })
+
+    return jsonify(committee_data)
