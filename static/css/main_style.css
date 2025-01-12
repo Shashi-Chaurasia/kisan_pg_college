@@ -458,6 +458,25 @@ nav img {
     max-width: 600px;
     text-align: center;
 }
+.responsive-text {
+      color: #eaeced;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding-bottom: 10px;
+      font-size: 40px; /* Default for larger screens */
+  }
+
+  @media (max-width: 768px) {
+      .responsive-text {
+          font-size: 28px; /* Smaller font size for tablets and phones */
+      }
+  }
+
+  @media (max-width: 480px) {
+      .responsive-text {
+          font-size: 22px; /* Even smaller font size for small phones */
+      }
+  }
 
 /*.logo {*/
 /*    width: 80px; !* Adjust the width to make the logo smaller *!*/
