@@ -89,6 +89,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/alumni.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/committees.css') }}">
 </head>
 <body>
     <!-- Google Translate Widget -->
@@ -108,8 +110,8 @@
                     <li><a href="{{ url_for('main_routes.news') }}">समाचार</a></li>
                     <li><a href="{{ url_for('main_routes.notification') }}">सूचना</a></li>
                     <li><a href="{{ url_for('main_routes.contact') }}">संपर्क करें</a></li>
-                    <li><a href="{{ url_for('main_routes.contact') }}">समिति</a></li>
-                    <li><a href="{{ url_for('main_routes.gallery') }}">गेलरीं</a></li>
+                    <li><a href="{{ url_for('main_routes.committees') }}">समिति</a></li>
+                    <li><a href="{{ url_for('main_routes.gallery') }}">गैलरी</a></li>
                 </ul>
             </div>
             <a href="{{ url_for('admin_routes.admin_login') }}" class="btn admin-btn">प्रशासक लॉगिन</a>
@@ -125,5 +127,7 @@
     <script src="{{ url_for('static', filename='js/main_script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/faculty.js') }}"></script>
     <script src="{{ url_for('static', filename='js/notification.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/alumni.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/committees.js') }}"></script>
 </body>
 </html>

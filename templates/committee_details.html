@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="committee-details">
+        <h1>{{ committee.name }}</h1>
+    <h1>dnkdnkwndw</h1>
+        <p>Type: {{ committee.type }}</p>
+
+        <h2>Members</h2>
+        <div class="member-list">
+            {% for member in members %}
+                <div class="member-card">
+                    <img src="{{ url_for('static', filename=member.photo if member.photo else 'default_photo.jpeg') }}" alt="{{ member.name }}">
+                    <h3>{{ member.name }}</h3>
+                    <p>Designation: {{ member.designation }}</p>
+                    <p>Bio: {{ member.bio }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

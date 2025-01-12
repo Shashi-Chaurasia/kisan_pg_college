@@ -1,0 +1,78 @@
+.alumni-section {
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.alumni-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.alumni-col {
+    min-width: 200px;
+    max-width: 200px;
+    margin: 10px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+}
+
+.alumni-col img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.alumni-col h3 {
+    font-family: 'Georgia', serif;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.alumni-col p {
+    font-family: 'Arial', sans-serif;
+    color: #777;
+    font-size: 14px;
+}
+
+.alumni-prev-btn, .alumni-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.alumni-prev-btn {
+    left: 10px;
+}
+
+.alumni-next-btn {
+    right: 10px;
+}
+
+.alumni-prev-btn:hover, .alumni-next-btn:hover {
+    background: #555;
+}

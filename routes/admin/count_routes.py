@@ -1,5 +1,5 @@
 from flask import render_template, Blueprint
-from models import Facilities, Courses, Faculty, Campus, Notification, News, Galleries
+from models import Facilities, Courses, Faculty, Campus, Notification, News, Galleries, Alumni, Committee, Member
 
 count_routes_bp = Blueprint('count_routes', __name__, url_prefix='/admin')
 
@@ -16,6 +16,10 @@ def count_all_for_dashboard():
     notification_count = Notification.query.count()
     news_count = News.query.count()
     gallery_count = Galleries.query.count()
+    alumni_count = Alumni.query.count()
+    committee_count = Committee.query.count()
+    members_count = Member.query.count()
     return render_template("admin/dashboard.html",course_count=course_count, faculty_count=faculty_count,
                            facilities_count=facilities_count, campus_count=campus_count,
-                           notification_count=notification_count,news_count=news_count, galleries_count=gallery_count)
+                           notification_count=notification_count,news_count=news_count, galleries_count=gallery_count,
+                           alumni_count=alumni_count,committee_count=committee_count,members_count=members_count)

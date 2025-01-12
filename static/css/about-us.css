@@ -82,3 +82,37 @@
     -webkit-line-clamp: unset; /* Remove line limit */
     height: auto; /* Allow full height */
 }
+
+/* Updated Profile Section */
+.about-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.profile {
+    text-align: center;
+    max-width: 200px;
+}
+
+.profile img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px; /* Make square with slight rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #666;
+}
+

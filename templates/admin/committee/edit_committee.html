@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<h1>{{ 'Edit Committee' if committee else 'Add New Committee' }}</h1>
+<form action="{{ url_for('committee_routes.add_or_edit_committee', id=committee.id if committee else None) }}" method="post">
+    <div>
+        <label for="name">Committee Name:</label>
+        <input type="text" id="name" name="name" value="{{ committee.name if committee else '' }}" required>
+    </div>
+    <div>
+        <label for="type">Committee Type:</label>
+        <input type="text" id="type" name="type" value="{{ committee.type if committee else '' }}" required>
+    </div>
+    <div>
+        <button type="submit">{{ 'Update' if committee else 'Add' }}</button>
+        <a href="{{ url_for('committee_routes.manage_committees') }}">Cancel</a>
+    </div>
+</form>
+{% endblock %}
