@@ -25,7 +25,7 @@ def home():
         "photo": "images/Principal.jpeg",
         "name": "प्रो. अनिल कुमार",
         "designation": "प्राचार्य",
-        "bio": "प्राचार्य संदेश - शैक्षणिक गुणवत्ता में अभिवृद्धि करना एवं देश व समाज के लिए कुशल और योग्य नागरिक तैयार करना |"
+        "bio": " संदेश - शैक्षणिक गुणवत्ता में अभिवृद्धि करना एवं देश व समाज के लिए कुशल और योग्य नागरिक तैयार करना |"
     }
     return render_template("home.html", title="Kisan PG College", faculties=faculty_list,courses=courses_list,facilities= facilities_list, notifications=notifications
                            ,campuses=campus_list, utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago,
