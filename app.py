@@ -1,21 +1,26 @@
 from flask import Flask
+from flask_wtf.csrf import CSRFProtect
 from models import db
 from routes import main_routes
 from routes.admin import admin_routes, faculty_routes, course_routes, facilities_routes, count_routes, campus_routes, \
     notification_routes, news_routes, gallery_routes, alumni_routes, committees_routes
 from flask_migrate import Migrate
+from config import config
+import os
 
+csrf = CSRFProtect()
 
-
-def create_app():
+def create_app(config_name=None):
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///kishanpgcollege.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.secret_key = 'your_secret_key'
-    UPLOAD_FOLDER = 'static/uploads/faculty'
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+    
+    # Load configuration
+    if config_name is None:
+        config_name = os.environ.get('FLASK_ENV', 'development')
+    app.config.from_object(config.get(config_name, config['default']))
+    
+    # Initialize extensions
     db.init_app(app)
+    csrf.init_app(app)
     Migrate(app, db)
     # Register blueprints
     main_routes.register_routes(app)

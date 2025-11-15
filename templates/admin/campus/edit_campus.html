@@ -4,6 +4,7 @@
 <section class="custom-faculty-form">
     <h2 class="form-heading">{{ "Edit campus" if campus.id else "Add Campus" }}</h2>
     <form method="POST" enctype="multipart/form-data" class="faculty-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="form-row">
             <label for="faculty-name" class="form-label">Title:</label>
             <input type="text" id="faculty-name" name="title" class="form-input" value="{{ campus.title if campus else '' }}" required>
