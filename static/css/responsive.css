@@ -1,0 +1,744 @@
+/* ============================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   Kisan PG College Website
+   ============================================ */
+
+/* ============================================
+   MOBILE FIRST APPROACH - BASE STYLES
+   ============================================ */
+
+/* Base Typography */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   NAVIGATION - ENHANCED MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 3% 4% !important;
+        flex-wrap: wrap;
+    }
+    
+    nav img {
+        width: 50px !important;
+    }
+    
+    .admin-btn {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .header {
+        min-height: 60vh !important;
+        padding: 20px 10px !important;
+    }
+    
+    .text-box {
+        width: 95% !important;
+        top: 20% !important;
+        padding: 15px !important;
+    }
+    
+    .text-box h1 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .text-box p {
+        font-size: 14px !important;
+        margin: 8px 0 !important;
+    }
+    
+    .hero-btn {
+        padding: 10px 25px !important;
+        font-size: 14px !important;
+        margin-top: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-box h1 {
+        font-size: 20px !important;
+    }
+    
+    .text-box p {
+        font-size: 12px !important;
+    }
+}
+
+/* ============================================
+   PRINCIPAL SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .principal-section {
+        padding: 30px 15px !important;
+    }
+    
+    .principal-profile {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .principal-photo {
+        margin: 0 auto 20px !important;
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    .principal-photo img {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    .principal-info {
+        padding: 0 !important;
+    }
+    
+    .principal-info h2 {
+        font-size: 22px !important;
+    }
+    
+    .principal-info h3 {
+        font-size: 16px !important;
+    }
+    
+    .principal-info p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* ============================================
+   NOTIFICATION SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .notification-section {
+        position: static !important;
+        width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 0 15px !important;
+    }
+    
+    .notification-wrapper {
+        width: 100% !important;
+    }
+    
+    #notification-list {
+        height: auto !important;
+        max-height: 200px !important;
+    }
+    
+    /* Notification Page */
+    .notif-section {
+        width: 100% !important;
+        padding: 15px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .notif-header h3 {
+        font-size: 20px !important;
+    }
+    
+    .notif-message a {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* ============================================
+   COURSE SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .course {
+        padding: 30px 15px !important;
+    }
+    
+    .course h1 {
+        font-size: 24px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .row {
+        flex-direction: column !important;
+    }
+    
+    .course-col {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 20px 15px !important;
+    }
+    
+    .course-col h2 {
+        font-size: 20px !important;
+    }
+    
+    .course-col p {
+        font-size: 14px !important;
+    }
+}
+
+/* ============================================
+   CAMPUS SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .campus {
+        padding: 30px 15px !important;
+    }
+    
+    .campus h1 {
+        font-size: 24px !important;
+    }
+    
+    .campus-col {
+        width: 100% !important;
+        margin: 15px 0 !important;
+    }
+    
+    .campus-col img {
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+    
+    .layer h3 {
+        font-size: 18px !important;
+    }
+}
+
+/* ============================================
+   FACILITIES SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .facilities {
+        padding: 30px 15px !important;
+    }
+    
+    .facilities h1 {
+        font-size: 24px !important;
+    }
+    
+    .facilities-col {
+        width: 100% !important;
+        margin: 15px 0 !important;
+        padding: 15px !important;
+    }
+    
+    .facilities-col img {
+        height: 180px !important;
+        object-fit: cover !important;
+    }
+    
+    .facilities-col h3 {
+        font-size: 18px !important;
+        margin: 15px 0 10px !important;
+    }
+    
+    .facilities-col p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* ============================================
+   FACULTY SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .faculty-section {
+        padding: 30px 15px !important;
+    }
+    
+    .faculty-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .faculty-card {
+        width: 100% !important;
+    }
+    
+    .faculty-card img {
+        height: 250px !important;
+        object-fit: cover !important;
+    }
+}
+
+/* ============================================
+   COMMITTEES PAGE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .committees-section {
+        padding: 20px 10px !important;
+    }
+    
+    .committees-layout {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .committees-list {
+        padding: 15px !important;
+    }
+    
+    .committees-list h2 {
+        font-size: 18px !important;
+    }
+    
+    .committee-details {
+        padding: 15px !important;
+    }
+    
+    .committee-details h2 {
+        font-size: 18px !important;
+    }
+    
+    .members-container .member {
+        padding: 12px !important;
+    }
+    
+    .members-container .member h4 {
+        font-size: 16px !important;
+    }
+    
+    .members-container .member p {
+        font-size: 13px !important;
+    }
+}
+
+/* ============================================
+   NEWS & GALLERY
+   ============================================ */
+
+@media (max-width: 768px) {
+    .news-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 15px !important;
+    }
+    
+    .news-card,
+    .gallery-item {
+        width: 100% !important;
+    }
+    
+    .news-card img,
+    .gallery-item img {
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+}
+
+/* ============================================
+   ALUMNI SECTION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .alumni-section {
+        padding: 30px 15px !important;
+    }
+    
+    .alumni-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .alumni-card {
+        padding: 15px !important;
+    }
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 15px !important;
+    }
+    
+    .contact-container {
+        flex-direction: column !important;
+    }
+    
+    .contact-info,
+    .contact-form {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px !important;
+        padding: 12px !important;
+    }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 15px !important;
+    }
+    
+    .footer-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .footer-section {
+        width: 100% !important;
+        margin: 15px 0 !important;
+    }
+    
+    .footer-section h3 {
+        font-size: 18px !important;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 14px !important;
+    }
+}
+
+/* ============================================
+   TABLES - RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    table {
+        display: block !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    table thead {
+        display: none !important;
+    }
+    
+    table tbody {
+        display: block !important;
+    }
+    
+    table tr {
+        display: block !important;
+        margin-bottom: 15px !important;
+        border: 1px solid #ddd !important;
+        border-radius: 8px !important;
+        padding: 10px !important;
+    }
+    
+    table td {
+        display: block !important;
+        text-align: right !important;
+        padding: 10px !important;
+        border: none !important;
+        position: relative !important;
+        padding-left: 50% !important;
+    }
+    
+    table td::before {
+        content: attr(data-label) !important;
+        position: absolute !important;
+        left: 10px !important;
+        font-weight: bold !important;
+        text-align: left !important;
+    }
+}
+
+/* ============================================
+   MODALS - RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95% !important;
+        margin: 10% auto !important;
+        padding: 20px !important;
+    }
+    
+    .modal-content img {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    
+    .modal-content h3 {
+        font-size: 20px !important;
+    }
+    
+    .modal-content p {
+        font-size: 14px !important;
+    }
+}
+
+/* ============================================
+   BUTTONS - TOUCH FRIENDLY
+   ============================================ */
+
+@media (max-width: 768px) {
+    button,
+    .btn,
+    .hero-btn {
+        min-height: 44px !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+        touch-action: manipulation !important;
+    }
+    
+    a {
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* ============================================
+   FORMS - MOBILE OPTIMIZED
+   ============================================ */
+
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px !important;
+        width: 100% !important;
+    }
+    
+    label {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+    
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .full-width-mobile {
+        width: 100% !important;
+    }
+}
+
+/* ============================================
+   TABLET SPECIFIC (768px - 1024px)
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90% !important;
+    }
+    
+    .row {
+        flex-wrap: wrap !important;
+    }
+    
+    .course-col,
+    .campus-col,
+    .facilities-col {
+        width: 48% !important;
+        margin: 1% !important;
+    }
+    
+    .committees-layout {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE (480px - 768px)
+   ============================================ */
+
+@media (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+    .header {
+        min-height: 80vh !important;
+    }
+    
+    .text-box {
+        top: 15% !important;
+    }
+    
+    nav {
+        padding: 2% 4% !important;
+    }
+}
+
+/* ============================================
+   SMALL MOBILE (< 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px !important;
+    }
+    
+    h1 {
+        font-size: 22px !important;
+    }
+    
+    h2 {
+        font-size: 18px !important;
+    }
+    
+    h3 {
+        font-size: 16px !important;
+    }
+    
+    .container {
+        padding: 0 10px !important;
+    }
+    
+    /* Extra small buttons */
+    button,
+    .btn {
+        padding: 10px 15px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    nav,
+    .admin-btn,
+    .icon,
+    footer,
+    .notification-section {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt !important;
+        color: #000 !important;
+        background: #fff !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+        color: #000 !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus states for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #2d9374 !important;
+    outline-offset: 2px !important;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2d9374;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    * {
+        border-color: currentColor !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* GPU acceleration for smooth animations */
+.nav-links,
+.modal,
+.notification-wrapper {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Lazy loading images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+

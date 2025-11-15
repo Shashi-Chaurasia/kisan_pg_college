@@ -133,4 +133,31 @@ document.addEventListener("DOMContentLoaded", function () {
             openModal(type);  // Open respective modal
         });
     });
+    
+    // Auto-dismiss flash messages after 5 seconds
+    const flashMessages = document.querySelectorAll('.alert');
+    flashMessages.forEach(message => {
+        setTimeout(() => {
+            message.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => {
+                message.remove();
+            }, 300);
+        }, 5000);
+    });
 });
+
+// Add slideOut animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);

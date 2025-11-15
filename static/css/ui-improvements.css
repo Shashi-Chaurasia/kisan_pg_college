@@ -1,0 +1,807 @@
+/* ============================================
+   UI IMPROVEMENTS - KISAN PG COLLEGE
+   Enhanced User Interface & Experience
+   ============================================ */
+
+/* ============================================
+   1. GOOGLE TRANSLATE - COMPACT & ELEGANT
+   ============================================ */
+
+#google_translate_element {
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    left: 10px !important;
+    top: 80px !important;
+    z-index: 9999 !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    padding: 8px 12px !important;
+    border: 2px solid #2d9374 !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 15px rgba(45, 147, 116, 0.3) !important;
+    font-size: 12px !important;
+    max-width: 180px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Show Google Translate gadget */
+#google_translate_element .goog-te-gadget {
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+/* Keep only the dropdown visible */
+#google_translate_element .goog-te-gadget span {
+    display: none !important;
+}
+
+#google_translate_element .goog-te-gadget .goog-te-combo {
+    display: inline-block !important;
+}
+
+#google_translate_element .goog-te-combo {
+    display: block !important;
+    visibility: visible !important;
+    padding: 6px 12px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    background: white !important;
+    cursor: pointer !important;
+    outline: none !important;
+    color: #333 !important;
+    font-family: 'Arial', sans-serif !important;
+    min-width: 120px !important;
+}
+
+#google_translate_element .goog-te-combo:hover {
+    border-color: #2d9374 !important;
+    box-shadow: 0 0 0 2px rgba(45, 147, 116, 0.1) !important;
+}
+
+#google_translate_element .goog-te-combo:focus {
+    border-color: #2d9374 !important;
+    box-shadow: 0 0 0 3px rgba(45, 147, 116, 0.2) !important;
+}
+
+/* Add label before dropdown */
+#google_translate_element::before {
+    content: '🌐 भाषा:';
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Remove Google Translate banner */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.skiptranslate {
+    display: inline-block !important;
+}
+
+/* Mobile adjustments for Google Translate */
+@media (max-width: 768px) {
+    #google_translate_element {
+        left: 5px !important;
+        top: 65px !important;
+        padding: 6px 10px !important;
+        max-width: 150px !important;
+    }
+    
+    #google_translate_element::before {
+        font-size: 10px !important;
+    }
+    
+    #google_translate_element .goog-te-combo {
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+        min-width: 100px !important;
+    }
+}
+
+/* ============================================
+   2. FACULTY SECTION - ENHANCED DESIGN
+   ============================================ */
+
+.faculties {
+    text-align: center;
+    margin: 60px 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.faculties h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #88493d;
+    position: relative;
+    display: inline-block;
+}
+
+.faculties h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+    border-radius: 2px;
+}
+
+.faculties > p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.faculty-carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 60px;
+}
+
+.faculty-carousel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #2d9374 #f0f0f0;
+}
+
+.faculty-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.faculty-carousel::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.faculty-carousel::-webkit-scrollbar-thumb {
+    background: #2d9374;
+    border-radius: 10px;
+}
+
+.faculty-carousel::-webkit-scrollbar-thumb:hover {
+    background: #88493d;
+}
+
+.faculties-col {
+    flex: 0 0 auto;
+    width: 240px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.faculties-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+}
+
+.faculties-col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.faculties-col img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 5px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.faculties-col:hover img {
+    border-color: #2d9374;
+    transform: scale(1.05);
+}
+
+.faculties-col h3 {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: #88493d;
+    font-weight: 600;
+}
+
+.faculties-col p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.prev-btn {
+    left: 5px;
+}
+
+.next-btn {
+    right: 5px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile adjustments for faculty section */
+@media (max-width: 768px) {
+    .faculties h1 {
+        font-size: 1.8em;
+    }
+    
+    .faculties > p {
+        font-size: 0.95em;
+        padding: 0 15px;
+    }
+    
+    .faculty-carousel-container {
+        padding: 20px 40px;
+    }
+    
+    .faculties-col {
+        width: 200px;
+        padding: 20px 15px;
+    }
+    
+    .faculties-col img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .prev-btn,
+    .next-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   3. CONTACT FORM - MODERN & BEAUTIFUL
+   ============================================ */
+
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.r_form_wrap {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.title {
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.title p {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.r_form {
+    padding: 40px 35px;
+}
+
+.input_wrap {
+    margin-bottom: 25px;
+}
+
+.input_wrap label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.05em;
+}
+
+.input_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_item #icon {
+    position: absolute;
+    left: 15px;
+    color: #2d9374;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.input,
+.mess {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.input:focus,
+.mess:focus {
+    outline: none;
+    border-color: #2d9374;
+    box-shadow: 0 0 0 3px rgba(45, 147, 116, 0.1);
+}
+
+.mess {
+    min-height: 120px;
+    resize: vertical;
+    padding-top: 15px;
+}
+
+.button,
+.clear_ad {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.button {
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    color: white;
+    box-shadow: 0 4px 15px rgba(45, 147, 116, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 147, 116, 0.4);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.clear_ad {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.clear_ad:hover {
+    background: #e0e0e0;
+}
+
+/* Mobile adjustments for contact form */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 10px;
+        margin: 20px auto;
+    }
+    
+    .title p {
+        font-size: 1.5em;
+    }
+    
+    .r_form {
+        padding: 30px 20px;
+    }
+    
+    .input,
+    .mess {
+        font-size: 16px; /* Prevents iOS zoom */
+    }
+}
+
+/* ============================================
+   4. HOME PAGE SECTIONS - ENHANCED
+   ============================================ */
+
+/* Principal Section Enhancement */
+.principal-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.principal-profile {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.principal-photo {
+    flex-shrink: 0;
+}
+
+.principal-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #2d9374;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.principal-info h2 {
+    color: #88493d;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.principal-info h3 {
+    color: #2d9374;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.principal-info p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+/* Course Section Enhancement */
+.course {
+    background: white;
+    padding: 60px 20px;
+}
+
+.course h1 {
+    color: #88493d;
+    position: relative;
+    display: inline-block;
+}
+
+.course h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+    border-radius: 2px;
+}
+
+.course-col {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #2d9374;
+}
+
+.course-col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.course-col h2 {
+    color: #88493d;
+    margin-bottom: 15px;
+}
+
+.course-col p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Campus & Facilities Enhancement */
+.campus,
+.facilities {
+    padding: 60px 20px;
+}
+
+.campus h1,
+.facilities h1 {
+    color: #88493d;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.campus h1::after,
+.facilities h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+    border-radius: 2px;
+}
+
+.campus-col,
+.facilities-col {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.campus-col:hover,
+.facilities-col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   5. ALUMNI SECTION - MATCHING FACULTY STYLE
+   ============================================ */
+
+.alumni-section {
+    text-align: center;
+    margin: 60px 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
+}
+
+.alumni-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #88493d;
+    position: relative;
+    display: inline-block;
+}
+
+.alumni-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+    border-radius: 2px;
+}
+
+.alumni-carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 60px;
+}
+
+.alumni-carousel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #2d9374 #f0f0f0;
+}
+
+.alumni-col {
+    flex: 0 0 auto;
+    width: 240px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.alumni-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #88493d, #2d9374);
+}
+
+.alumni-col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-col img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 5px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.alumni-col:hover img {
+    border-color: #88493d;
+    transform: scale(1.05);
+}
+
+.alumni-col h3 {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: #88493d;
+    font-weight: 600;
+}
+
+.alumni-col p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.alumni-prev-btn,
+.alumni-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #88493d, #2d9374);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-prev-btn {
+    left: 5px;
+}
+
+.alumni-next-btn {
+    right: 5px;
+}
+
+.alumni-prev-btn:hover,
+.alumni-next-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   6. GENERAL IMPROVEMENTS
+   ============================================ */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better section spacing */
+section {
+    margin-bottom: 40px;
+}
+
+/* Improved headings */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+}
+
+/* Better link hover effects */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Improved button styles */
+.hero-btn {
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    padding: 15px 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(45, 147, 116, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45, 147, 116, 0.4);
+}
+
+/* ============================================
+   7. MOBILE RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .principal-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .principal-photo img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .alumni-carousel-container {
+        padding: 20px 40px;
+    }
+    
+    .alumni-col {
+        width: 200px;
+        padding: 20px 15px;
+    }
+    
+    .alumni-col img {
+        width: 120px;
+        height: 120px;
+    }
+}
+

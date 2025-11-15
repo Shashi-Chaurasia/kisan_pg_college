@@ -12,6 +12,13 @@
     <header class="admin-header">
         <div class="logo">
             <h1>Admin Panel</h1>
+            <a href="{{ url_for('main_routes.home') }}" class="back-to-site-btn" title="Back to Website">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Back to Website
+            </a>
         </div>
         <nav>
             <ul>
@@ -24,12 +31,24 @@
                 <li><a href="{{ url_for('gallery_routes.manage_gallery') }}">Manage Gallery</a></li>
                 <li><a href="{{ url_for('alumni_routes.manage_alumni') }}">Manage Alumni</a></li>
                 <li><a href="{{ url_for('committee_routes.manage_committees') }}">Manage Committees</a></li>
-{#                <li><a href="{{ url_for('facilities_routes.manage_facilities') }}">Manage Facilities</a></li>#}
-{#                <li><a href="{{ url_for('manage_news') }}">Manage News</a></li>#}
-                <li><a href="{{ url_for('admin_routes.admin_logout') }}">Logout</a></li>
+                <li><a href="{{ url_for('admin_routes.admin_logout') }}" class="logout-btn">Logout</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- Flash Messages -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    
     <main class="admin-content">
         {% block content %}
         <section class="welcome-section">
