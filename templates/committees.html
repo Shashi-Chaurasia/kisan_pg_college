@@ -8,26 +8,34 @@
             <div class="committees-list">
                 <h2>College Committees</h2>
                 <ul>
-                    {% for committee in college_committees %}
-                    <li>
-                        <a href="#" class="committee-link" data-committee-id="{{ committee.id }}">
-                            {{ committee.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
+                    {% if college_committees %}
+                        {% for committee in college_committees %}
+                        <li>
+                            <a href="#" class="committee-link" data-committee-id="{{ committee.id }}">
+                                {{ committee.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        <li style="color: #888; font-style: italic;">No college committees available</li>
+                    {% endif %}
                 </ul>
             </div>
 
             <div class="committees-list">
                 <h2>Management Committees</h2>
                 <ul>
-                    {% for committee in management_committees %}
-                    <li>
-                        <a href="#" class="committee-link" data-committee-id="{{ committee.id }}">
-                            {{ committee.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
+                    {% if management_committees %}
+                        {% for committee in management_committees %}
+                        <li>
+                            <a href="#" class="committee-link" data-committee-id="{{ committee.id }}">
+                                {{ committee.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        <li style="color: #888; font-style: italic;">No management committees available</li>
+                    {% endif %}
                 </ul>
             </div>
 

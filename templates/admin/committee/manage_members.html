@@ -1,28 +1,91 @@
 {% extends "admin/base.html" %}
 {% block content %}
-<h1>Manage Members of {{ committee.name }}</h1>
-<a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id) }}">Add New Member</a>
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for member in members %}
-        <tr>
-            <td>{{ member.name }}</td>
-            <td>{{ member.designation }}</td>
-            <td>
-                <a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id, id=member.id) }}">Edit</a> |
-                <form action="{{ url_for('committee_routes.delete_member', committee_id=committee.id, id=member.id) }}" method="post" style="display: inline;">
-                    <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="page-header">
+    <div>
+        <a href="{{ url_for('committee_routes.manage_committees') }}" class="btn btn-secondary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Committees
+        </a>
+        <h1>Manage Members of {{ committee.name }}</h1>
+        <p class="subtitle">Committee Type: <span class="badge badge-{{ 'primary' if 'college' in committee.type.lower() else 'secondary' }}">{{ committee.type }}</span></p>
+    </div>
+    <a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id) }}" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add New Member
+    </a>
+</div>
+
+{% if members %}
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Bio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    {% if member.photo %}
+                        <img src="{{ url_for('static', filename=member.photo) }}" alt="{{ member.name }}" class="member-thumb">
+                    {% else %}
+                        <div class="member-thumb-placeholder">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                    {% endif %}
+                </td>
+                <td><strong>{{ member.name }}</strong></td>
+                <td>{{ member.designation }}</td>
+                <td>{{ (member.bio[:50] + '...') if member.bio and member.bio|length > 50 else (member.bio or 'N/A') }}</td>
+                <td class="action-buttons">
+                    <a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id, id=member.id) }}" class="btn btn-sm btn-warning" title="Edit Member">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        Edit
+                    </a>
+                    <form action="{{ url_for('committee_routes.delete_member', committee_id=committee.id, id=member.id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this member?');">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-sm btn-danger" title="Delete Member">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            </svg>
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="empty-state">
+    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+    <h3>No Members Found</h3>
+    <p>Add members to this committee to get started.</p>
+    <a href="{{ url_for('committee_routes.add_or_edit_member', committee_id=committee.id) }}" class="btn btn-primary">Add Member</a>
+</div>
+{% endif %}
 {% endblock %}

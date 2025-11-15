@@ -1,0 +1,592 @@
+/* ============================================
+   NAVIGATION & HEADER IMPROVEMENTS
+   Best UI Interface for Logo, Nav, and More
+   ============================================ */
+
+/* ============================================
+   1. ENHANCED NAVIGATION BAR
+   ============================================ */
+
+nav {
+    display: flex;
+    padding: 15px 6% !important;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border-bottom: 3px solid transparent !important;
+    border-image: linear-gradient(90deg, #2d9374, #88493d) 1 !important;
+    transition: all 0.3s ease !important;
+}
+
+nav.scrolled {
+    padding: 10px 6% !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ============================================
+   2. LOGO ENHANCEMENT
+   ============================================ */
+
+nav img#logo-img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain !important;
+    transition: all 0.3s ease !important;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1)) !important;
+    padding: 5px !important;
+    background: white !important;
+    border-radius: 50% !important;
+    border: 3px solid #2d9374 !important;
+}
+
+nav img#logo-img:hover {
+    transform: scale(1.05) rotate(5deg) !important;
+    border-color: #88493d !important;
+    box-shadow: 0 4px 15px rgba(45, 147, 116, 0.3) !important;
+}
+
+/* Logo container with college name */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.college-name-nav {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.college-name-nav .main-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #88493d;
+    font-family: 'Georgia', serif;
+}
+
+.college-name-nav .sub-name {
+    font-size: 0.85em;
+    color: #2d9374;
+    font-weight: 500;
+}
+
+/* ============================================
+   3. NAVIGATION LINKS ENHANCEMENT
+   ============================================ */
+
+.nav-links {
+    flex: 1;
+    text-align: center !important;
+    padding: 0 20px !important;
+}
+
+.nav-links ul {
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 !important;
+    position: relative;
+    margin: 0 5px !important;
+}
+
+.nav-links a {
+    font-weight: 600 !important;
+    font-family: 'Georgia', serif !important;
+    color: #333 !important;
+    text-decoration: none;
+    font-size: 15px !important;
+    padding: 10px 18px !important;
+    display: inline-block !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Gradient background on hover */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 25px;
+}
+
+.nav-links a:hover::before {
+    opacity: 1;
+}
+
+.nav-links a:hover {
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 147, 116, 0.3);
+}
+
+/* Remove old underline effect */
+.nav-links ul li::after {
+    display: none !important;
+}
+
+/* Active link indicator */
+.nav-links a.active {
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(45, 147, 116, 0.3);
+}
+
+/* ============================================
+   4. ADMIN BUTTON ENHANCEMENT
+   ============================================ */
+
+.admin-btn {
+    background: linear-gradient(135deg, #2d9374, #88493d) !important;
+    color: #fff !important;
+    padding: 10px 25px !important;
+    text-decoration: none !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(45, 147, 116, 0.3) !important;
+    border: 2px solid transparent !important;
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(45, 147, 116, 0.4) !important;
+    background: linear-gradient(135deg, #88493d, #2d9374) !important;
+}
+
+/* ============================================
+   5. ABOUT SECTION - "संस्था के बारे में"
+   ============================================ */
+
+.about-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h1 {
+    font-size: 2.8em;
+    color: #88493d;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    font-family: 'Georgia', serif;
+}
+
+.about-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+    border-radius: 3px;
+}
+
+.about-header p {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #2d9374, #88493d);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-card .icon {
+    font-size: 3em;
+    color: #2d9374;
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    font-size: 1.5em;
+    color: #88493d;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.about-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.05em;
+}
+
+/* ============================================
+   6. NOTIFICATION BOARD - "सूचना पट्ट"
+   ============================================ */
+
+.notification-section {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 380px !important;
+    z-index: 998 !important;
+    max-height: 400px !important;
+}
+
+.notification-wrapper {
+    background: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden !important;
+    border: 3px solid transparent !important;
+    border-image: linear-gradient(135deg, #2d9374, #88493d) 1 !important;
+}
+
+.notification-header {
+    background: linear-gradient(135deg, #2d9374, #88493d) !important;
+    color: #fff !important;
+    padding: 18px 20px !important;
+    font-size: 18px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.notification-header h3 {
+    margin: 0 !important;
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    font-family: 'Georgia', serif !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.notification-header h3::before {
+    content: '📢';
+    font-size: 1.2em;
+}
+
+#new-notification-indicator {
+    background: #ff4444 !important;
+    color: #fff !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#notification-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #2d9374 #f0f0f0 !important;
+}
+
+#notification-list::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+#notification-list::-webkit-scrollbar-track {
+    background: #f0f0f0 !important;
+}
+
+#notification-list::-webkit-scrollbar-thumb {
+    background: #2d9374 !important;
+    border-radius: 3px !important;
+}
+
+#notification-list li {
+    padding: 15px 20px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    transition: all 0.3s ease !important;
+    animation: none !important;
+}
+
+#notification-list li:hover {
+    background: #f8f9fa !important;
+    padding-left: 25px !important;
+}
+
+#notification-list li:last-child {
+    border-bottom: none !important;
+}
+
+#notification-list li a {
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+#notification-list li a::before {
+    content: '•';
+    color: #2d9374;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+#notification-list li a:hover {
+    color: #2d9374 !important;
+}
+
+.new-tag {
+    background: linear-gradient(135deg, #ff4444, #ff6b6b) !important;
+    color: white !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 12px !important;
+    margin-left: auto !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 6px rgba(255, 68, 68, 0.3) !important;
+}
+
+/* ============================================
+   7. COURSE TITLE SPACING FIX
+   ============================================ */
+
+.course {
+    padding: 60px 20px 40px !important;
+    margin-top: 40px !important;
+}
+
+.course h1 {
+    font-size: 2.5em !important;
+    color: #88493d !important;
+    margin-bottom: 50px !important; /* Increased from default */
+    position: relative !important;
+    display: inline-block !important;
+    padding-bottom: 20px !important; /* Added padding */
+}
+
+.course h1::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important; /* Changed from -10px to 0 */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 120px !important;
+    height: 5px !important;
+    background: linear-gradient(90deg, #2d9374, #88493d) !important;
+    border-radius: 3px !important;
+}
+
+.course .row {
+    margin-top: 30px !important; /* Added margin */
+}
+
+/* ============================================
+   8. MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 10px 4% !important;
+    }
+    
+    nav img#logo-img {
+        width: 55px !important;
+        height: 55px !important;
+    }
+    
+    .college-name-nav {
+        display: none;
+    }
+    
+    .admin-btn {
+        display: none !important;
+    }
+    
+    /* Notification Board */
+    .notification-section {
+        position: static !important;
+        width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 0 15px !important;
+        max-height: none !important;
+    }
+    
+    .notification-wrapper {
+        width: 100% !important;
+        border-radius: 15px !important;
+    }
+    
+    .notification-header h3 {
+        font-size: 1.1em !important;
+    }
+    
+    #notification-list {
+        max-height: 250px !important;
+    }
+    
+    /* About Section */
+    .about-header h1 {
+        font-size: 2em !important;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .about-card {
+        padding: 25px !important;
+    }
+    
+    /* Course Title */
+    .course h1 {
+        font-size: 1.8em !important;
+        margin-bottom: 35px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    nav img#logo-img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .notification-header {
+        padding: 15px !important;
+    }
+    
+    .notification-header h3 {
+        font-size: 1em !important;
+    }
+    
+    #notification-list li {
+        padding: 12px 15px !important;
+    }
+    
+    #notification-list li a {
+        font-size: 13px !important;
+    }
+}
+
+/* ============================================
+   9. SMOOTH SCROLLING & ANIMATIONS
+   ============================================ */
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Fade in animation for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-card,
+.course-col,
+.notification-wrapper {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   10. ACCESSIBILITY IMPROVEMENTS
+   ============================================ */
+
+/* Focus states */
+nav a:focus,
+.admin-btn:focus,
+#notification-list li a:focus {
+    outline: 3px solid #2d9374 !important;
+    outline-offset: 3px !important;
+}
+
+/* Skip to main content */
+.skip-to-main {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    background: #2d9374;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 0 0 5px 0;
+    z-index: 10000;
+    transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+

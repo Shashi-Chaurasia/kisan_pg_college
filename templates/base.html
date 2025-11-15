@@ -11,8 +11,7 @@
     <!-- Title -->
     <title>Kisan PG College - Excellence in PG Studies</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/svg+xml">
+   <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}?v=1" type="image/png">
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Kisan PG College - Excellence in PG Studies">
@@ -91,10 +90,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/alumni.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/committees.css') }}">
+    <!-- UI Improvements -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-improvements.css') }}">
+    <!-- Navigation & Header Improvements -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation-improvements.css') }}">
+    <!-- About & Notification Page Redesign -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about-notification-redesign.css') }}">
+    <!-- Responsive Design - Must be last -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 <body>
     <!-- Google Translate Widget -->
     <div id="google_translate_element"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay" id="navOverlay" onclick="hidemenu()"></div>
 
     <!-- Header Section -->
     <section>

@@ -4,6 +4,7 @@
 <section class="custom-faculty-form">
     <h2 class="form-heading">{{ "Edit Notification" if notification.id else "Add Notification" }}</h2>
     <form method="POST" enctype="multipart/form-data" class="faculty-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="form-row">
             <label for="faculty-name" class="form-label">Message:</label>
             <input type="text" id="faculty-name" name="message" class="form-input" value="{{ notification.title if notification else '' }}" required>
