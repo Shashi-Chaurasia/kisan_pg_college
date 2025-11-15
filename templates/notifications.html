@@ -1,33 +1,83 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!-- Refactored Notification Section -->
-    <section class="header">
+<!-- Notification Page Header -->
+<section class="notification-page-header">
+    <div class="notification-hero">
+        <div class="hero-icon">📢</div>
+        <h1>सूचना पट्ट</h1>
+        <p class="notification-subtitle">महाविद्यालय की सभी महत्वपूर्ण सूचनाएं</p>
+    </div>
+</section>
 
-
-    <section class="notif-section">
-        <div class="notif-container">
-            <div class="notif-header">
-                <h3>सूचना पट्ट</h3>
-            </div>
-            <div class="notif-content">
+<!-- Notifications List Section -->
+<section class="notifications-list-section">
+    <div class="notifications-container">
+        {% if notifications %}
+            <div class="notifications-grid">
                 {% for notification in notifications %}
-                    <div class="notif-row">
-                        <p class="notif-message">
-                            <a href="{{ url_for('static', filename=notification.photo) }}" alt="{{ notification.message }}">
-                                {{ notification.message }}
-                                {% if notification.created_at %}
-                                    {% set notification_date = notification.created_at.strftime('%Y-%m-%d') %}
-                                    {% if notification_date == today_date or notification_date >= two_days_ago %}
-                                        <span class="notif-new-tag">New</span>
-                                    {% endif %}
+                    <div class="notification-card">
+                        <div class="notification-card-header">
+                            <div class="notification-icon">
+                                {% if notification.photo and notification.photo.endswith('.pdf') %}
+                                    📄
+                                {% else %}
+                                    📌
                                 {% endif %}
-                            </a>
-                        </p>
+                            </div>
+                            {% if notification.created_at %}
+                                {% set notification_date = notification.created_at.strftime('%Y-%m-%d') %}
+                                {% if notification_date == today_date or notification_date >= two_days_ago %}
+                                    <span class="notification-new-badge">New</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="notification-card-body">
+                            <p class="notification-message">{{ notification.message }}</p>
+                            {% if notification.created_at %}
+                                <p class="notification-date">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    {{ notification.created_at.strftime('%d %B %Y') }}
+                                </p>
+                            {% endif %}
+                        </div>
+                        {% if notification.photo %}
+                            <div class="notification-card-footer">
+                                <a href="{{ url_for('static', filename=notification.photo) }}" target="_blank" class="notification-link">
+                                    {% if notification.photo.endswith('.pdf') %}
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                        </svg>
+                                        PDF देखें
+                                    {% else %}
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                            <polyline points="21 15 16 10 5 21"></polyline>
+                                        </svg>
+                                        फाइल देखें
+                                    {% endif %}
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
-        </div>
-    </section>
+        {% else %}
+            <div class="empty-state-notification">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <h3>कोई सूचना उपलब्ध नहीं</h3>
+                <p>फिलहाल कोई नई सूचना नहीं है। कृपया बाद में देखें।</p>
+            </div>
+        {% endif %}
+    </div>
 </section>
+
 {% endblock %}

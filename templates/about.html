@@ -1,24 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-<<section class="header">
-    <div class="about-us-section">
-        <div class="about-container">
-            <div class="about-profile">
-                <div class="profile">
-                    <img src="{{ url_for('static', filename='images/raju_sir.jpeg') }}" alt="Principal">
-                    <h3 style="font-family: 'Georgia', serif; text-align: center;font-size:30px " >धीरेन्द्र उर्फ राजू राय</h3>
-                    <p style="font-family: 'Georgia', serif; text-align: center; font-size: 20px">अध्यक्ष</p>
+<section class="about-page-header">
+    <div class="about-hero">
+        <h1>संस्था के बारे में</h1>
+        <p class="about-subtitle">किसान पी.जी. कॉलेज का गौरवशाली इतिहास</p>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section class="leadership-section">
+    <div class="leadership-container">
+        <h2 class="section-title">हमारे नेतृत्व</h2>
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <div class="leader-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/raju_sir.jpeg') }}" alt="अध्यक्ष">
+                    <div class="leader-badge">अध्यक्ष</div>
                 </div>
-                <div class="profile">
-                    <img src="{{ url_for('static', filename='images/anupkumar.jpeg') }}" alt="Vice Principal">
-                    <h3 style="font-family: 'Georgia', serif; text-align: center;font-size:30px " >अनूप कुमार राय</h3>
-                    <p style="font-family: 'Georgia', serif; text-align: center; font-size: 20px">प्रबन्धक</p>
+                <div class="leader-info">
+                    <h3>धीरेन्द्र उर्फ राजू राय</h3>
+                    <p class="leader-title">अध्यक्ष</p>
+                    <p class="leader-desc">प्रबंध समिति के अध्यक्ष के रूप में महाविद्यालय के विकास में अग्रणी भूमिका</p>
                 </div>
             </div>
-            <div class="about-content">
-                <h2>महाविद्यालय के बारे में</h2>
-                <p id="about-text" class="truncate">
+            <div class="leader-card">
+                <div class="leader-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/anupkumar.jpeg') }}" alt="प्रबन्धक">
+                    <div class="leader-badge">प्रबन्धक</div>
+                </div>
+                <div class="leader-info">
+                    <h3>अनूप कुमार राय</h3>
+                    <p class="leader-title">प्रबन्धक</p>
+                    <p class="leader-desc">महाविद्यालय के प्रबंधन और विकास में महत्वपूर्ण योगदान</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content Section -->
+<section class="about-content-section">
+    <div class="about-content-container">
+        <div class="about-main-content">
+            <h2 class="section-title">महाविद्यालय का इतिहास</h2>
+            <div class="content-card">
+                <p id="about-text" class="about-paragraph truncate">
                     उत्तर प्रदेश औऱ बिहार सीमा पर स्थित किसान स्नातकोत्तर महाविद्यालय, तमकुहीरोड,
 सेवरही (कुशीनगर) की स्थापना स्वनामधन्य स्व. डॉ. सिंहासन राय एवं लोकमान्य
 इंटरमीडिएट कॉलेज के यशस्वी प्रधानाचार्य स्व. पंडित सुदामा शुक्ल द्वारा इस क्षेत्र में गन्ना
@@ -70,8 +97,42 @@
 निवर्तमान सांसद माननीय श्री कलराज मिश्र द्वारा सांसद निधि से प्राप्त पांच लाख रुपए
 अनुदान से पी0जी0 ब्लॉक में बरामदे का निर्माण कार्य सम्पन्न हुआ है
 वर्तमान सांसद डॉ. रमापति राम त्रिपाठी द्वारा रुपए 5 लाख छात्राओं के शौचालय हेतु दिया
-गया जो निर्माणाधीन है।</p>
-                <button id="read-more-btn" class="learn-more-btn">Read More</button>
+गया जो निर्माणाधीन है।
+                </p>
+                <button id="read-more-btn" class="read-more-btn">
+                    <span class="btn-text">और पढ़ें</span>
+                    <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Key Highlights -->
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">🎓</div>
+                <h3>स्थापना वर्ष</h3>
+                <p class="highlight-value">1974</p>
+                <p class="highlight-desc">गन्ना किसानों के सहयोग से स्थापित</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">📚</div>
+                <h3>पाठ्यक्रम</h3>
+                <p class="highlight-value">9+</p>
+                <p class="highlight-desc">स्नातक और स्नातकोत्तर विषय</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🏛️</div>
+                <h3>परिसर क्षेत्र</h3>
+                <p class="highlight-value">18.32</p>
+                <p class="highlight-desc">एकड़ भूमि</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🎯</div>
+                <h3>सम्बद्धता</h3>
+                <p class="highlight-value">DDU</p>
+                <p class="highlight-desc">गोरखपुर विश्वविद्यालय</p>
             </div>
         </div>
     </div>
