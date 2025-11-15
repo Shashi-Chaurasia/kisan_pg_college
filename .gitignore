@@ -1,0 +1,68 @@
+# Database files
+instance/*.db
+!instance/kishanpgcollege.db
+instance/*.sqlite
+instance/*.sqlite3
+*.db
+!instance/kishanpgcollege.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+stderr.log
+stdout.log
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Flask
+instance/
+!instance/kishanpgcollege.db
+.webassets-cache
+
+# Uploads (optional - uncomment if you don't want to track uploads)
+# static/uploads/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Migration files (optional - uncomment if you want to ignore migrations)
+# migrations/versions/*.py
+
