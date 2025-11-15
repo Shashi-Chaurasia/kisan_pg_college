@@ -98,6 +98,7 @@ def committees():
     # Use case-insensitive filter to match types containing "college" or "management"
     committee_items = Committee.query.filter(func.lower(Committee.type).like('%college%')).all()
     management_items = Committee.query.filter(func.lower(Committee.type).like('%management%')).all()
+
     
     # Debug: Print all committees and their types
     all_committees = Committee.query.all()
@@ -108,6 +109,7 @@ def committees():
     print(f"Management Committees Found: {len(management_items)}")
     print("============================")
     
+
     return render_template('committees.html', title="Committees", college_committees=committee_items
                            , management_committees=management_items)
 
