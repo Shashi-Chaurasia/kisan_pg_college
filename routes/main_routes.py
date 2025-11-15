@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 import pytz
+from sqlalchemy import func
 
 from flask import render_template, Blueprint, send_from_directory, jsonify, abort
 from models import Faculty, Courses, Facilities, Campus, News, Notification, Galleries, Alumni, Committee
@@ -86,8 +87,9 @@ def gallery():
 
 @main_routes_bp.route('/committees')
 def committees():
-    committee_items = Committee.query.filter_by(type='college').all()
-    management_items = Committee.query.filter_by(type='management').all()
+    # Use case-insensitive filter to match types containing "college" or "management"
+    committee_items = Committee.query.filter(func.lower(Committee.type).like('%college%')).all()
+    management_items = Committee.query.filter(func.lower(Committee.type).like('%management%')).all()
     print(committee_items)
     return render_template('committees.html', title="Committees", college_committees=committee_items
                            , management_committees=management_items)
@@ -104,7 +106,7 @@ def get_committee(committee_id):
     # Serialize the committee data
     committee_data = {
         'id': committee.id,
-        'name': committee.type,
+        'name': committee.name,
         # 'description': committee.description,
         'members': []
     }

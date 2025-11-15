@@ -32,8 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     committeeLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const committeeId = e.target.getAttribute('data-committee-id');
-            loadCommitteeMembers(committeeId);
+            const committeeId = link.getAttribute('data-committee-id');
+            if (committeeId) {
+                loadCommitteeMembers(committeeId);
+            }
         });
     });
 

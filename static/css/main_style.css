@@ -468,7 +468,7 @@ nav img {
 
   @media (max-width: 768px) {
       .responsive-text {
-          font-size: 28px; /* Smaller font size for tablets and phones */
+          font-size: 22px !important; /* Smaller font size for tablets and phones */
       }
   }
 
