@@ -1,8 +1,10 @@
 # Database files
 instance/*.db
+!instance/kishanpgcollege.db
 instance/*.sqlite
 instance/*.sqlite3
 *.db
+!instance/kishanpgcollege.db
 *.sqlite
 *.sqlite3
 
@@ -50,6 +52,7 @@ Thumbs.db
 
 # Flask
 instance/
+!instance/kishanpgcollege.db
 .webassets-cache
 
 # Uploads (optional - uncomment if you don't want to track uploads)
