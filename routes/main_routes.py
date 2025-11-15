@@ -70,13 +70,6 @@ def notification():
     two_days_ago = (utc_now - timedelta(days=2)).strftime('%Y-%m-%d')
     notifications = Notification.query.all()
     
-    # Debug: Print all notifications
-    print("=== DEBUG: Notifications ===")
-    print(f"Total Notifications Found: {len(notifications)}")
-    for notif in notifications:
-        print(f"ID: {notif.id}, Message: {notif.message}, Photo: {notif.photo}, Created: {notif.created_at}")
-    print("============================")
-    
     return render_template("notifications.html", title="Notifications", notifications=notifications,
                            utc_now=utc_now, today_date=today_date, two_days_ago=two_days_ago)
 
@@ -98,17 +91,6 @@ def committees():
     # Use case-insensitive filter to match types containing "college" or "management"
     committee_items = Committee.query.filter(func.lower(Committee.type).like('%college%')).all()
     management_items = Committee.query.filter(func.lower(Committee.type).like('%management%')).all()
-
-    
-    # Debug: Print all committees and their types
-    all_committees = Committee.query.all()
-    print("=== DEBUG: All Committees ===")
-    for comm in all_committees:
-        print(f"ID: {comm.id}, Name: {comm.name}, Type: '{comm.type}'")
-    print(f"College Committees Found: {len(committee_items)}")
-    print(f"Management Committees Found: {len(management_items)}")
-    print("============================")
-    
 
     return render_template('committees.html', title="Committees", college_committees=committee_items
                            , management_committees=management_items)
