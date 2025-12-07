@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Faculty Detail Page -->
+<section class="faculty-detail-section">
+    <div class="faculty-detail-container">
+        <!-- Back Button -->
+        <div class="back-button-wrapper">
+            <a href="{{ url_for('main_routes.faculty_list') }}" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Faculty List
+            </a>
+        </div>
+
+        <!-- Faculty Profile Card -->
+        <div class="faculty-profile-card">
+            <div class="faculty-profile-header">
+                <div class="faculty-image-large">
+                    {% if faculty.photo %}
+                    <img src="{{ url_for('static', filename=faculty.photo) }}" alt="{{ faculty.name }}">
+                    {% else %}
+                    <img src="{{ url_for('static', filename='images/default_faculty.jpg') }}" alt="{{ faculty.name }}">
+                    {% endif %}
+                </div>
+                <div class="faculty-header-info">
+                    <h1>{{ faculty.name }}</h1>
+                    <p class="faculty-designation-large">{{ faculty.designation }}</p>
+                </div>
+            </div>
+
+            <!-- Faculty Bio -->
+            {% if faculty.bio and faculty.bio.strip() and faculty.bio.strip()|length > 2 and not faculty.bio.strip().isdigit() %}
+            <div class="faculty-bio-section">
+                <h2>About</h2>
+                <p>{{ faculty.bio }}</p>
+            </div>
+            {% endif %}
+
+            <!-- Achievements Section -->
+            <div class="faculty-documents-section">
+                <h2>Achievements</h2>
+                <div class="documents-grid">
+                    {% if faculty.achievement_pdf %}
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Achievements</h3>
+                        <p>View faculty achievements and accomplishments</p>
+                        <a href="{{ url_for('static', filename=faculty.achievement_pdf) }}" target="_blank" class="download-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download PDF
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    {% if not faculty.achievement_pdf %}
+                    <div class="no-documents">
+                        <p>No achievements available for this faculty member.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

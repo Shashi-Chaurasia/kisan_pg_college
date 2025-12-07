@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Faculty List Hero Section -->
+<section class="faculty-page-header">
+    <div class="faculty-hero">
+        <div class="hero-icon">👨‍🏫</div>
+        <h1>संकाय सदस्य</h1>
+        <p class="faculty-subtitle">महाविद्यालय के सम्मानित संकाय सदस्य</p>
+    </div>
+</section>
+
+<!-- Faculty List Section -->
+<section class="faculty-list-section">
+    <div class="faculty-container">
+        {% if faculties %}
+            {% for faculty in faculties %}
+            <div class="faculty-card" onclick="window.location.href='{{ url_for('main_routes.faculty_detail', faculty_id=faculty.id) }}'">
+                <div class="faculty-image-wrapper">
+                    {% if faculty.photo %}
+                    <img src="{{ url_for('static', filename=faculty.photo) }}" alt="{{ faculty.name }}" loading="lazy" onerror="this.onerror=null; this.src='{{ url_for('static', filename='images/default_photo.jpeg') }}';">
+                    {% else %}
+                    <img src="{{ url_for('static', filename='images/default_photo.jpeg') }}" alt="{{ faculty.name }}" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#999;font-size:3em;\'>👤</div>';">
+                    {% endif %}
+                </div>
+                <div class="faculty-info">
+                    <h3>{{ faculty.name }}</h3>
+                    <p class="faculty-designation">{{ faculty.designation }}</p>
+                    {% if faculty.bio %}
+                    <p class="faculty-bio-preview">{{ faculty.bio[:100] }}{% if faculty.bio|length > 100 %}...{% endif %}</p>
+                    {% endif %}
+                    <button class="view-details-btn">View Details</button>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-faculty-state">
+                <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <h3>कोई संकाय सदस्य नहीं मिला</h3>
+                <p>फिलहाल कोई संकाय सदस्य उपलब्ध नहीं हैं।</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+

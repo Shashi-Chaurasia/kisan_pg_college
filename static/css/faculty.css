@@ -44,8 +44,11 @@
     padding: 15px;
     margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     scroll-snap-align: start; /* Align the items at the start of the scroll */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .faculties-col img {
@@ -93,7 +96,50 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* View All Faculty Button */
+.view-all-faculty-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #2d9374, #88493d);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 147, 116, 0.3);
+    margin: 20px 0;
+}
+
+.view-all-faculty-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 147, 116, 0.4);
+    background: linear-gradient(135deg, #88493d, #2d9374);
+}
+
+/* Enhanced clickable faculty card hover effects */
+.faculties-col::after {
+    content: 'View Details';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(45, 147, 116, 0.9), transparent);
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.faculties-col:hover::after {
+    transform: translateY(0);
+}
+
 .faculties-col:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(45, 147, 116, 0.3);
+    border-color: #2d9374;
 }

@@ -17,6 +17,9 @@ class Faculty(db.Model):
     designation = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.Text, nullable=True)
     photo = db.Column(db.String(200), nullable=True)
+    achievement_pdf = db.Column(db.String(200), nullable=True)
+    research_pdf = db.Column(db.String(200), nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.now(pytz.timezone('Asia/Kolkata')))
 
 class Notification(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -156,3 +156,49 @@ border-color: var(--btn-hvr);
     height: 100px;
     width: 100px;
 }
+
+/* Radio Button Styles - Horizontal Layout */
+.r_form .input_wrap .input_radio {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item .radio_mark {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--secondary);
+    transition: color 0.3s ease;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item input[type="radio"]:checked + .radio_mark {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item .radio_mark .i {
+    font-size: 18px;
+}
+
+.r_form .input_wrap .input_radio .input_radio_item:hover .radio_mark {
+    color: var(--primary);
+}
