@@ -1,8 +1,13 @@
-import sys
+import imp
 import os
+import sys
 
-# Add the app directory to the Python path
+
 sys.path.insert(0, os.path.dirname(__file__))
+
+
+wsgi = imp.load_source('wsgi', 'app.py')
+application = wsgi.app
 
 # Change to the application directory (important for cPanel)
 os.chdir(os.path.dirname(__file__))
@@ -53,3 +58,4 @@ except ImportError as e:
             db.create_all()
         
         application = app
+
