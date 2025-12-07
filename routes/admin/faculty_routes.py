@@ -9,7 +9,9 @@ def register_routes(app):
     app.register_blueprint(faculty_routes_bp);
 
 UPLOAD_FOLDER = "static/uploads/faculty"
+PDF_FOLDER = "static/uploads/faculty/pdfs"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(PDF_FOLDER, exist_ok=True)
 
 @faculty_routes_bp.route("/manage/faculty", methods=["GET", "POST"])
 def manage_faculty():
@@ -32,6 +34,8 @@ def add_or_edit_faculty(id):
         designation = request.form["designation"]
         bio = request.form.get("bio", "")
         photo = request.files.get("photo")
+        achievement_pdf = request.files.get("achievement_pdf")
+        
         if faculty:
             faculty.name = name
             faculty.designation = designation
@@ -41,15 +45,36 @@ def add_or_edit_faculty(id):
                 photo_path = os.path.join(UPLOAD_FOLDER, filename)
                 photo.save(photo_path)
                 faculty.photo = os.path.join("uploads/faculty", filename)
+            if achievement_pdf and achievement_pdf.filename:
+                filename = secure_filename(achievement_pdf.filename)
+                if filename.lower().endswith('.pdf'):
+                    pdf_path = os.path.join(PDF_FOLDER, filename)
+                    achievement_pdf.save(pdf_path)
+                    faculty.achievement_pdf = os.path.join("uploads/faculty/pdfs", filename)
         else:
-            filename = secure_filename(photo.filename) if photo else None
+            photo_filename = secure_filename(photo.filename) if photo else None
             relative_photo_path = (
-                os.path.join("uploads/faculty", filename) if filename else None
+                os.path.join("uploads/faculty", photo_filename) if photo_filename else None
             )
+            achievement_pdf_path = None
+            
             if photo:
-                photo_path = os.path.join(UPLOAD_FOLDER, filename)
+                photo_path = os.path.join(UPLOAD_FOLDER, photo_filename)
                 photo.save(photo_path)
-            faculty = Faculty(name=name, designation=designation, bio=bio, photo=relative_photo_path)
+            if achievement_pdf and achievement_pdf.filename:
+                filename = secure_filename(achievement_pdf.filename)
+                if filename.lower().endswith('.pdf'):
+                    pdf_path = os.path.join(PDF_FOLDER, filename)
+                    achievement_pdf.save(pdf_path)
+                    achievement_pdf_path = os.path.join("uploads/faculty/pdfs", filename)
+            
+            faculty = Faculty(
+                name=name, 
+                designation=designation, 
+                bio=bio, 
+                photo=relative_photo_path,
+                achievement_pdf=achievement_pdf_path
+            )
             db.session.add(faculty)
 
         db.session.commit()
@@ -66,6 +91,24 @@ def delete_faculty(id):
 
     faculty = Faculty.query.get_or_404(id)
     try:
+        # Delete associated files
+        if faculty.photo:
+            photo_path = os.path.join("static", faculty.photo)
+            if os.path.exists(photo_path):
+                try:
+                    os.remove(photo_path)
+                except OSError:
+                    pass
+        
+        if faculty.achievement_pdf:
+            pdf_path = os.path.join("static", faculty.achievement_pdf)
+            if os.path.exists(pdf_path):
+                try:
+                    os.remove(pdf_path)
+                except OSError:
+                    pass
+        
+        # Delete the faculty record
         db.session.delete(faculty)
         db.session.commit()
         flash("Faculty deleted successfully!", "success")

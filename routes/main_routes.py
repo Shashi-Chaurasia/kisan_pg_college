@@ -86,6 +86,18 @@ def gallery():
     gallery_items = Galleries.query.all()
     return render_template('gallery.html', title="gallery", gallery=gallery_items)
 
+@main_routes_bp.route('/faculty')
+def faculty_list():
+    """Display all faculty members"""
+    faculties = Faculty.query.all()
+    return render_template('faculty_list.html', title="Faculty", faculties=faculties)
+
+@main_routes_bp.route('/faculty/<int:faculty_id>')
+def faculty_detail(faculty_id):
+    """Display detailed information about a specific faculty member"""
+    faculty = Faculty.query.get_or_404(faculty_id)
+    return render_template('faculty_detail.html', title=faculty.name, faculty=faculty)
+
 @main_routes_bp.route('/committees')
 def committees():
     # Use case-insensitive filter to match types containing "college" or "management"

@@ -58,17 +58,27 @@ def add_or_edit_gallery(id):
 
 @gallery_routes_bp.route("/manage/gallery/delete/<int:id>", methods=["POST"])
 def delete_gallery(id):
-    """Route to delete faculty."""
+    """Route to delete gallery item."""
     if not session.get("admin_logged_in"):
         return redirect(url_for("admin_routes.admin_login"))
 
     gallery = Galleries.query.get_or_404(id)
     try:
+        # Delete the associated photo file if it exists
+        if gallery.photo:
+            photo_path = os.path.join("static", gallery.photo)
+            if os.path.exists(photo_path):
+                try:
+                    os.remove(photo_path)
+                except OSError:
+                    pass  # Continue even if file deletion fails
+        
+        # Delete the gallery record from database
         db.session.delete(gallery)
         db.session.commit()
-        flash("Faculty deleted successfully!", "success")
+        flash("Gallery item deleted successfully!", "success")
     except Exception as e:
         db.session.rollback()
-        flash(f"Error deleting faculty: {str(e)}", "error")
+        flash(f"Error deleting gallery item: {str(e)}", "error")
 
     return redirect(url_for("gallery_routes.manage_gallery"))

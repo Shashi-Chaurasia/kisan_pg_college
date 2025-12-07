@@ -22,15 +22,20 @@
 
         <div class="form-row">
             <label for="faculty-photo" class="form-label">Photo:</label>
-            <input type="file" id="faculty-photo" name="photo" class="form-input">
+            <input type="file" id="faculty-photo" name="photo" class="form-input" accept="image/*">
+            {% if faculty and faculty.photo %}
+            <p class="form-help">Current: <a href="{{ url_for('static', filename=faculty.photo) }}" target="_blank">View Current Photo</a></p>
+            {% endif %}
         </div>
 
-        {% if faculty.photo %}
         <div class="form-row">
-            <p class="current-photo-label">Current Photo:</p>
-            <img src="{{ url_for('static', filename=faculty.photo) }}" alt="Current Photo" class="current-photo">
+            <label for="achievement-pdf" class="form-label">Achievement PDF:</label>
+            <input type="file" id="achievement-pdf" name="achievement_pdf" class="form-input" accept=".pdf">
+            {% if faculty and faculty.achievement_pdf %}
+            <p class="form-help">Current: <a href="{{ url_for('static', filename=faculty.achievement_pdf) }}" target="_blank">View Current PDF</a></p>
+            {% endif %}
+            <p class="form-help">Upload a PDF file containing faculty achievements</p>
         </div>
-        {% endif %}
 
         <div class="form-row">
             <button type="submit" class="form-submit-btn">Save</button>
